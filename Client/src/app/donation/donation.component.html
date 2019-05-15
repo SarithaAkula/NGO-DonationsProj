@@ -1,0 +1,26 @@
+<div>
+  
+  <h2>Make a Donation(user view)</h2>
+  <h4>Click on any one Donation Type to continue</h4>
+  <!--
+  <p>
+    <button (click)="showOverview()">Type1</button>
+  </p>
+  <p>
+    <button (click)="showOverview()">Type2</button>
+  </p>
+  <p>
+    <button (click)="showOverview()">Type3</button>
+  </p>
+  <p>
+    <button (click)="showOverview()">Type4</button>
+  </p>
+  -->
+
+  <ul class="items">
+
+    <li *ngFor="let donationType of donationTypes" (click)="onSelect(donationType)"> 
+      <span class="budge"></span>{{donationType.name}}
+  </li>
+</ul>
+</div>
