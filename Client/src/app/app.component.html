@@ -1,147 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<!--   
-<head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-</style>
-</head>
-<body>
-
-<ul>
-  <li><a class="active" href="#home">NGO</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li style="float:right"><a class="active" href="#about">Login/Register</a>
-</ul>
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div> -->
-
-
 <head>
 <title>NGO Donations Website Layout</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-/* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
-
-/* Middle column */
-.column.middle {
-  width: 50%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
-
-/* Style the footer */
-.footer {
-  background-color:blue;
-  padding: 10px;
-  text-align: center;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.hero-image {
-  background: url(img_man.jpg) no-repeat center; 
-  background-size: cover;
-  height: 500px;
-  position: relative;
-}
-
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -149,10 +11,10 @@ body {
     <h1>NGO-Donations</h1>
   </div>
   <div class="topnav">
-    <a href="#">NGO</a>
-    <a href="#">Contact</a>
-    <li style="float:right"><a class="active" href="#about">Login</a>
-    <li style="float:right"><a class="active" href="#about">Register</a>
+    <a routerLink="/ngodonnations/home" routerLinkActive="active">NGO</a>
+    <a routerLink="/ngodonnations/Contact" routerLinkActive="active">Contact</a>
+    <li style="float:right"><a routerLink="/ngodonnations/login" routerLinkActive="active">Login</a>
+    <li style="float:right"><a routerLink="/ngodonnations/Signup" routerLinkActive="active">Register</a>
   </div>
   <!-- <div class="hero-image">
     <div class="hero-text">
@@ -160,16 +22,10 @@ body {
       <h3> Welcome to {{ title }}!</h3>
     </div>
   </div> -->
- 
-  
+
   <div style="text-align:center" >
-       <!-- width = 100%;
-       height= 400px;
-       background-image= url('img_flowers.jpg');
-       background-repeat= no-repeat;
-       background-size= contain;  -->
     <h1>
-      Welcome to {{ title }}!
+    Welcome to {{ title }}!
     </h1>
   </div>
 </body> 

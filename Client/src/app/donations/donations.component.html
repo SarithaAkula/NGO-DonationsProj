@@ -1,77 +1,14 @@
-
-<head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #28dacb;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color on hover */
-li a:hover {
-  background-color: rgb(11, 53, 243);
-  color: white;
-}
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
-
-/* Middle column */
-.column.middle {
-  width: 70%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
-
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-</style>
-</head>
 <body>
-
-
 <div class = "column side">
 <ul>
   <li><a routerLink="/ngodonnations/user/:id" routerLinkActive="active">UserManagement</a></li>
   <li><a routerLink="/ngodonnations/donations/:id" routerLinkActive="active">DonationsManagement</a></li>
   <li><a routerLink="/ngodonnations/user" routerLinkActive="active">UserView</a></li>
-  
 </ul>
 </div>
+
 <div class = "column middle">
-  <p>Click any donation to continue</p>
+  <h2>Click any donation to continue</h2>
 <nav>
   <a routerLink="/ngodonnations/donations/type1" routerLinkActive="active">Type1</a>
   <a routerLink="/ngodonnations/donations/type2" routerLinkActive="active">Type2</a>
