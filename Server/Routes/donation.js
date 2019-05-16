@@ -1,4 +1,4 @@
-const donation=require('../modules/donation');
+const donation=require('../Models/Donations');
 
 
 
@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors=require('cors');
 
+
 const PORT =3000;
 //const app =express();
 app.use(bodyParser.json());
@@ -15,7 +16,7 @@ app.use(cors("*","*","*"));
 //const route = require('./routes/route');
 
 const db='mongodb://localhost:27017/mongo-ngodonations'
-mongoose.connect(db, err=> {
+mongoose.connect(db,  { useNewUrlParser: true },err=> {
     if (err){
         console.log('error!' + err);
     }else{
@@ -27,22 +28,22 @@ mongoose.connect(db, err=> {
 
 
 
-app.post('/donations',function(req,res,next) {
+app.post('Home/donationTypes',function(req,res,next) {
     donation.create(req.body,function(err, donation){
         if(err) return next(err);
         res.json(donation);
     });
 });
 
-app.get('/donations',function(req, res) {
-    donation.find(function(err,donation){
+app.get('Home/donationTypes',function(req, res) {
+    donation.find(function(err,donations){
         if(err) return next(err);
-        res.json(donation);
+        res.json(donations);
     });
 }
 );
 
-app.get('/donations/:id',function(req, res) {
+app.get('Home/donationTypes/:id',function(req, res) {
     donation.findById(req.params.id,req.body,function(err,donation){
         if(err) return next(err);
         res.json(donation);
@@ -50,15 +51,16 @@ app.get('/donations/:id',function(req, res) {
 }
 );
 
-app.delete('/donations/:id',function(req,res,next){
+app.delete('Home/donationTypes/:id',function(req,res,next){
     donation.findByIdAndRemove(req.params.id,req.body,function(err,donation){
         if(err) return next(err);
         res.json(donation);
     });
 });
 
-app.update('/donations/:id',function(req,res,next){
+app.put('Home/donationTypes/:id',function(req,res,next){
     donation.findByIdAndUpdate(req.params.id,req.body,function(err,donation){
+        console.log(req.params.id)
         if(err) return next(err);
         res.json(donation);
     });

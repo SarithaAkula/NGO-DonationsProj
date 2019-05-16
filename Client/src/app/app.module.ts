@@ -7,6 +7,13 @@ import { UserComponent } from './user/user.component';
 
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { DonationsComponent } from './donations/donations.component';
+import { DonationComponent } from './donation/donation.component';
+import { GiftComponent } from './gift/gift.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common'; 
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -17,11 +24,18 @@ import { DonationsComponent } from './donations/donations.component';
     ShoppingcartComponent,
     
     DonationsComponent,
+    DonationComponent,
+    GiftComponent,
+    TestComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    CommonModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

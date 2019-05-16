@@ -38,11 +38,12 @@ export class GiftComponent implements OnInit {
 
 
   goBackDonation(){
-    this.router.navigate(['/donations']); //change to /donation
+    this.router.navigate(['Home/donationTypes']); //change to /donation
   }
 
   gotoCart(){
-      this.router.navigate(['/cart']); //change to /donation 
+      this.router.navigate(['Home/donationTypes/:id/cart']); //change to /donation 
   }
+
 
 }

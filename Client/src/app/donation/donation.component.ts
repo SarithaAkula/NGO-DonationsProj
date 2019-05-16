@@ -22,7 +22,7 @@ export class DonationComponent implements OnInit {
   }
 
   onSelect(donationType){
-    this.router.navigate(['/donationTypes',donationType.id])
+    this.router.navigate(['Home/donationTypes',donationType.id])
   }
 }
 

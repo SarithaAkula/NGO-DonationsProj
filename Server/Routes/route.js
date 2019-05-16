@@ -21,6 +21,12 @@ router.options("*",function(req,res,next){
       res.status(200).end();
   });
 
+//   var app = angular.module("app", []); 
+//   app.controller('gift', ['$scope', function ($scope) { 
+//       $scope.disableClick = function (isDisabled) { 
+//       $scope.isDisabled = !isDisabled; 
+//       } 
+//   }]); 
 //signup
 router.post('/signup',function(req,res){
     var saltRounds = 0;

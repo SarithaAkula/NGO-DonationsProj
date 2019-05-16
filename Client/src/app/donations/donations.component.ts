@@ -12,4 +12,5 @@ export class DonationsComponent implements OnInit {
   ngOnInit() {
   }
 
+  
 }
