@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  public users = [];
+
+  public currentUser;
+
+
+  constructor(private router:Router, private _userService: UserService) { }
 
   ngOnInit() {
+    this._userService.getData()
+    .subscribe( data => this.users = data);
+  }
+
+  onSelect(user){
+    this.router.navigate(['/user', user._id]);
+  }
+
+  addUser(){
+    this.router.navigate(['']);
+    this.router.navigate(['./signup']);
   }
 
 }

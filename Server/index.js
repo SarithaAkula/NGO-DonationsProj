@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
-const users = require('./Routes/route');
+const users = require('./Routes/user');
 
 app.use('/',users);
 

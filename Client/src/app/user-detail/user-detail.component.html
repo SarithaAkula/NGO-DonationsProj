@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <h2>Registration Form</h2>
+  
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>first Name</label>
+        <input type="text" formControlName="firstName" [class.is-invalid]="firstName.invalid && firstName.touched" class="form-control">
+        <!-- <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">firstName is required</small> -->
+        <div *ngIf="firstName.invalid && firstName.touched">
+          <small class="text-danger" *ngIf="firstName.errors?.required">firstName is required</small>
+          <small class="text-danger" *ngIf="firstName.errors?.minlength">firstName must be at least 3 characters</small>
+          <small class="text-danger" *ngIf="firstName.errors?.forbiddenName">'{{firstName.errors?.forbiddenName.value}}' firstName not allowed</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" [class.is-invalid]="lastName.invalid && lastName.touched" formControlName="lastName" class="form-control">
+        <!-- <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">lastName is required</small> -->
+        <div *ngIf="lastName.invalid && lastName.touched">
+          <small class="text-danger" *ngIf="lastName.errors?.required">lastName is required</small>
+          <small class="text-danger" *ngIf="lastName.errors?.minlength">lastName must be at least 3 characters</small>
+          <small class="text-danger" *ngIf="lastName.errors?.forbiddenName">'{{lastName.errors?.forbiddenName.value}}' lastName not allowed</small>
+        </div>
+      </div>
+  
+  
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" [class.is-invalid]="email.invalid && email.touched" formControlName="email" class="form-control">
+        <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+      </div>
+  
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" formControlName="city" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label>State</label>
+          <input type="text" formControlName="state" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label>Postal Code</label>
+          <input type="text" formControlName="postalCode" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>country</label>
+          <input type="text" formControlName="country" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Urbanization</label>
+          <input type="text" formControlName="urbanization" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Role</label>
+          <input type="text" formControlName="role" class="form-control">
+        </div>
+  
+      <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Register</button>
+  
+    </form>
+  </div>
+  
