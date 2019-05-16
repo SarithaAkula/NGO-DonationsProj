@@ -45,8 +45,8 @@ router.put('/api/users/:id', function(req, res, next){
 
 
 //delete
-router.delete('/api/users', function(req, res, next){
-    User.deleteOne(req.body, function(err, user){
+router.delete('/api/users/:id', function(req, res, next){
+    User.deleteOne({'_id':req.params.id}, function(err, user){
         if(err) return next(err);
         res.json(user);
     });

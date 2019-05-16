@@ -27,7 +27,7 @@
       <td>{{u.email}}</td>
       <td>{{u.role}}</td>
       <td (click) = "onSelect(u)">Edit</td>
-      <td><button>Delete</button></td>
+      <td (click) = "delete(u._id)">Delete</td>
     </tr>
     
   </tbody>

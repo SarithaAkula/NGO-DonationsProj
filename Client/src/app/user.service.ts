@@ -21,4 +21,12 @@ export class UserService {
     //console.log(this.http.get<user>(this._url+'/'+userId));
     return this.http.get<user>(this._url+'/'+userId);
   }
+
+  update(userId:string, user: user){
+    return this.http.put(this._url+'/'+userId, user);
+  }
+
+  delete(userId:string){
+    return this.http.delete(this._url+'/'+userId);
+  }
 }

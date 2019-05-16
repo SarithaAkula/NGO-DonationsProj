@@ -22,9 +22,15 @@ export class SignupComponent implements OnInit {
        postalCode: new FormControl('')
      })
   });*/
+
+  roles = Array<String>();
+
   constructor(private fb: FormBuilder, private _signupService: SignupService) { }
 
   ngOnInit() {
+    this.roles.push("Admin");
+    this.roles.push("User");
+
     this.registrationForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: [''],
@@ -80,6 +86,9 @@ export class SignupComponent implements OnInit {
         response => console.log('Success!', response),
         error => console.error('Error!', error)
       );
+
+      this.registrationForm.reset()
   }
+  
 
 }
