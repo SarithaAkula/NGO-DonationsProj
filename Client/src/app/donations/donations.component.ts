@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { DonationsService } from '../donations.service';
 
 @Component({
   selector: 'app-donations',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonationsComponent implements OnInit {
 
-  constructor() { }
+  public donationTypes = [];
+  constructor(private router:Router, private _donationsService: DonationsService) { }
 
   ngOnInit() {
+    this._donationsService.getData()
+    .subscribe( data => this.donationTypes = data);
+  }
+
+  onSelect(donationType){
+    this.router.navigate(['/donations', donationType._id]);
+  }
+
+  addDonationType(){
+    this.router.navigate(['']);
+    this.router.navigate(['./addDonationType']);
   }
 
 }
+  
+
+ 

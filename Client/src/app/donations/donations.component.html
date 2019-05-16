@@ -10,10 +10,12 @@
 <div class = "column middle">
   <h2>Click any donation to continue</h2>
 <nav>
-  <a routerLink="/ngodonnations/donations/type1" routerLinkActive="active">Type1</a>
-  <a routerLink="/ngodonnations/donations/type2" routerLinkActive="active">Type2</a>
-  <a routerLink="/ngodonnations/donations/type3" routerLinkActive="active">Type3</a>
-  <a routerLink="/ngodonnations/donations/type4" routerLinkActive="active">Type4</a>
+  <a routerLink="/ngodonnations/donations/type1" routerLinkActive="active" 
+  *ngFor="let donationType of donationTypes" (click)="onSelect(donationType)">{{donationType.donationType}}</a>
 </nav>
 </div>
 </body>
+
+  
+    
+    
