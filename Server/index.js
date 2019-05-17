@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const users = require('./Routes/user');
+const donations = require('./Routes/donations');
+app.use('/',donations);
 
 app.use('/',users);
 

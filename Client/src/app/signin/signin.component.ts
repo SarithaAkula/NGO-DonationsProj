@@ -24,8 +24,9 @@ export class SigninComponent{
     this._signinService.signin(this.signinModel)
     .subscribe(
       Response => {
-        let id = Response._id;
+        let id = Response.user._id;
         this.id = id;
+        localStorage.setItem("user", JSON.stringify(Response.user));
         if(Response.role == 'Admin'){
           this.router.navigate(['./user']);
         }else{
