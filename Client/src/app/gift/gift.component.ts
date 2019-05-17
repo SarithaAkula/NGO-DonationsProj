@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms' ;
 import { Donations } from '../shared/model/Donations';
 import {DonationsService} from '../donations.service';
 import { ShoppingCart } from '../shared/model/ShoppingCart';
+import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-gift',
@@ -16,28 +17,32 @@ export class GiftComponent  {
   public donationId: string;
   public donations : Donations;
   public userid: string;
-  public shoppingCartModel = new ShoppingCart(this.userid,null,this.donationId,null,null, new Date());
+  public shoppingCartModel = new ShoppingCart("","",null,"",null,null, new Date());
   public submitted:boolean;
 
-  constructor( private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService) 
+  constructor( private route:ActivatedRoute, private router:Router, 
+    private _userService: UserService,private _donationsService: DonationsService) 
   {
 
     this.route.paramMap.subscribe((params: ParamMap) => {
         let did = params.get('donationid');
         this.donationId = did;
-        this.shoppingCartModel.donnationType = this.donationId;
     });
 
     this.route.parent.params.subscribe(params => {
       this.userid = params["userid"];
-      this.shoppingCartModel.userid = this.userid;
-  });
+    });
+
+    this._userService.getDetail(this.userid).subscribe(data =>{
+      this.shoppingCartModel.username = data.firstName + " " + data.LastName;
+      this.shoppingCartModel.email = data.email;
+    })
 
 
     this._donationsService.getDetail(this.donationId)
     .subscribe( data => {
       let donation = data;
-      this.donations = donation;
+      this.shoppingCartModel.donnationType = data.donationType;
     });
 
     

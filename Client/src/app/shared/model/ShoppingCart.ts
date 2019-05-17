@@ -1,6 +1,7 @@
 export class ShoppingCart{
     constructor(
-    public userid:String,
+    public username:String,
+    public email: string,
     public orderId:Number,
     public donnationType:String,
     public price:Number,
