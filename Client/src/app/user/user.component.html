@@ -1,3 +1,34 @@
-<p>
-  user works!
-</p>
+
+
+
+<button (click) = "addUser()">
+    add new user
+</button>
+<table class="table table-bordered">
+
+  <thead>
+      <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th></th>
+          <th></th>
+      </tr>  
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of users;
+              let i = index;
+              let e = even;
+              let o = odd"
+              [ngClass]="{odd:o, even:e}"  >
+      <td>{{u.firstName}}</td>
+      <td>{{u.lastName}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.role}}</td>
+      <td (click) = "onSelect(u)">Edit</td>
+      <td (click) = "delete(u._id)">Delete</td>
+    </tr>
+    
+  </tbody>
+</table>
