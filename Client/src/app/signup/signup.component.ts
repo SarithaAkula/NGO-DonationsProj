@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { ForbiddenNameValidator } from '../shared/user-name.validator';
 import { PasswordValidator } from '../shared/password.validator';
 import { SignupService } from '../signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -25,7 +26,7 @@ export class SignupComponent implements OnInit {
 
   roles = Array<String>();
 
-  constructor(private fb: FormBuilder, private _signupService: SignupService) { }
+  constructor(private fb: FormBuilder, private _signupService: SignupService,private router:Router) { }
 
   ngOnInit() {
     this.roles.push("Admin");
@@ -83,7 +84,13 @@ export class SignupComponent implements OnInit {
     console.log(this.registrationForm.value);
     this._signupService.signup(this.registrationForm.value)
       .subscribe(
-        response => console.log('Success!', response),
+        response => {
+          /*if(response.role == 'Admin'){
+            this.router.navigate(['./user']);
+          }*/
+          this.router.navigate(['./signin']);
+        },
+        //console.log('Success!', response),
         error => console.error('Error!', error)
       );
 

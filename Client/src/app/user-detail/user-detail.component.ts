@@ -26,7 +26,7 @@ export class UserDetailComponent {
     this.roles.push("Admin");
     this.roles.push("User");
     this.route.paramMap.subscribe((params: ParamMap) => {
-      let id = params.get('id');
+      let id = params.get('userid');
       this.userId = id;
     });
      // data=>console.log(data));

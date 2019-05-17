@@ -9,7 +9,9 @@ import { SignupComponent} from './signup/signup.component'
 import { AppRoutingModule } from './app-routing.module';
 import { SigninComponent } from './signin/signin.component';
 import { UserComponent } from './user/user.component';
-import { UserDetailComponent } from './user-detail/user-detail.component'
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { HomeComponent } from './home/home.component';
+import { DonationsComponent } from './donations/donations.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component'
     SignupComponent,
     SigninComponent,
     UserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    HomeComponent,
+    DonationsComponent
   ],
   imports: [
     BrowserModule,

@@ -34,6 +34,13 @@ router.get('/api/users/:id', function(req, res, next){
         res.status(500).json({error: err})})
 });
 
+//get by email
+/*router.get('/api/users', function(req, res, next){
+    User.findOne({'email':req.params.email}).then(function(user){res.json(user);}).catch(err =>{
+        res.status(500).json({error: err})})
+});*/
+
+
 
 //update
 router.put('/api/users/:id', function(req, res, next){
@@ -80,7 +87,8 @@ router.post('/signup', function (req, res) {
             user.save().then(function(result){
                 console.log(result);
                 res.status(200).json({
-                    success: "new user created"
+                    success: "new user created",
+                    role: req.body.role
                 });
 
             }).catch(err =>{
@@ -113,9 +121,12 @@ router.post('/signin', function(req, res){
                 {
                     expiresIn: '2h'
                 });
+
                 return res.status(200).json({
                     success: 'welcome to the JWT Auth',
-                    token: JWTToken
+                    token: JWTToken,
+                    _id: user._id,
+                    role: user.role
                 });                
             }
             return res.status(401).json({

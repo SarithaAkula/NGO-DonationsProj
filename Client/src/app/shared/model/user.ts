@@ -13,9 +13,7 @@ export class user{
         public zipcode: number,
         public country: string,
         public urbanization: string,
-       public role: {
-            "enum": ["Admin", "User"]
-        }
+       public role: string
     ){
     }
 }
