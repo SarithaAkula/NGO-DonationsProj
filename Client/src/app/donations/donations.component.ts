@@ -18,7 +18,7 @@ export class DonationsComponent implements OnInit {
   }
 
   onSelect(donationType){
-    this.router.navigate(['/donations', donationType._id]);
+    this.router.navigate(['./gift', donationType._id]);
   }
 
   addDonationType(){

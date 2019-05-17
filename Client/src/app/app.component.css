@@ -73,7 +73,7 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   .hero-image {
-    background: url('../app/images/donate3.jpg') no-repeat center; 
+    background: url('../assets/images/donate3.jpg') no-repeat center; 
     background-size: cover;
     height: 500px;
     position: relative;
