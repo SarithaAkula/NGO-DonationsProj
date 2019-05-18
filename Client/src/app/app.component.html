@@ -1,12 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
 
-<div class = "column side">
-    <ul>
-      <li><a routerLink="/ngodonnations/user/:id" routerLinkActive="active">UserManagement</a></li>
-      <li><a routerLink="/Home/donationTypes" routerLinkActive="active">DonationsManagement</a></li>
-      <li><a routerLink="/ngodonnations/user" routerLinkActive="active">UserView</a></li>
-      
-    </ul>
-    <router-outlet></router-outlet>
-    </div>
+<head>
+<title>NGO Donations Website Layout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
+<body>
+  <div class="header">
+    <h1>NGO-Donations</h1>
+  </div>
+  <div class="topnav">
+    <a routerLink="/ngodonnations/home" routerLinkActive="active">NGO</a>
+    <a routerLink="/ngodonnations/Contact" routerLinkActive="active">Contact</a>
+    <li style="float:right"><a routerLink="/ngodonnations/login" routerLinkActive="active">Login</a>
+    <li style="float:right"><a routerLink="/ngodonnations/Signup" routerLinkActive="active">Register</a>
+  </div>
+  <div style="text-align:center" >
+      <h1>
+      Welcome to {{ title }}!
+      </h1>
+    </div>  
+  <div class="hero-image"></div>
+</body> 
+<router-outlet></router-outlet>
+<!-- <app-donations></app-donations>  -->
+<!-- <app-shoppingcart></app-shoppingcart> -->
 

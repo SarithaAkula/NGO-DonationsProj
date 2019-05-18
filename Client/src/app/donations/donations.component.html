@@ -1,82 +1,40 @@
-<!-- 
-<head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #28dacb;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color on hover */
-li a:hover {
-  background-color: rgb(11, 53, 243);
-  color: white;
-}
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
-
-/* Middle column */
-.column.middle {
-  width: 70%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
-
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-</style>
-</head>
 <body>
-
-
 <div class = "column side">
 <ul>
   <li><a routerLink="/ngodonnations/user/:id" routerLinkActive="active">UserManagement</a></li>
-  <li><a routerLink="/Home/donationTypes" routerLinkActive="active">DonationsManagement</a></li>
+  <li><a routerLink="/donations" routerLinkActive="active">DonationsManagement</a></li>
   <li><a routerLink="/ngodonnations/user" routerLinkActive="active">UserView</a></li>
-  
 </ul>
 </div>
+
 <div class = "column middle">
-  <p>Click any donation to continue</p>
-<nav>
-  <a routerLink="/ngodonnations/donations/type1" routerLinkActive="active">Type1</a>
-  <a routerLink="/ngodonnations/donations/type2" routerLinkActive="active">Type2</a>
-  <a routerLink="/ngodonnations/donations/type3" routerLinkActive="active">Type3</a>
-  <a routerLink="/ngodonnations/donations/type4" routerLinkActive="active">Type4</a>
+  <h2>Click any donation to continue</h2>
+<!-- <nav>
+  <a routerLink="donations/:id/gift" routerLinkActive="active" 
+  *ngFor="let donationType of donationTypes" (click)="onSelect(donationType)">{{donationType.donationType}}</a>
+  <button type="button" *ngFor="let donationType of donationTypes" (click)="delete(donationType._id)">Delete a DonationType</button>
+</nav> -->
+<nav *ngFor="let donationType of donationTypes">
+  <a routerLink="donations/:id/gift" routerLinkActive="active" class="btn btn-secondary active"
+   (click)="onSelect(donationType)">{{donationType.donationType}}</a>
+   <button type="button" class="btn btn-outline-secondary btn-lg" (click)="goUpdatePage(donationType)">Update</button>
+
+  <button type="button" class="btn btn-outline-danger btn-lg" (click)="delete(donationType._id)">Delete</button>
+
+  <!-- <button type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button> -->
 </nav>
 </div>
-</body> -->
+<!-- <div routerLink="/gift" routerLinkActive="active" 
+*ngFor="let donationType of donationTypes" >{{donationType.donationType}}
+<input  type="Number" name="Price">
+<input type="submit" value="AddtoCart">
+</div> -->
+
+<button type="button" (click)="add()">Add a DonationType</button>
+</body>
+
+  
+    
+    

@@ -1,24 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GiftComponent } from './gift/gift.component';
-import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { DonationsComponent } from './donations/donations.component';
-import {TestComponent} from './test/test.component';
-import {AppComponent} from './app.component'
-import { DoComponent } from './do/do.component';
+import { GiftComponent } from './gift/gift.component';
+import { AppComponent } from './app.component';
+import { AddDonationTypeComponent } from './add-donation-type/add-donation-type.component';
+import {ShoppingcartComponent} from './shoppingcart/shoppingcart.component';
+import {UpdateDonationComponent} from './update-donation/update-donation.component';
 
-const routes: Routes =[
-  {path:'', redirectTo: '/Home',pathMatch:'full'}, 
-  {path:'Home/donationTypes', component:DoComponent},
-  {path:'Home', component:AppComponent},
-  {path: 'Home/donationTypes/:id', component:GiftComponent},
-  {path: 'Home/donationTypes/:id/cart', component:ShoppingcartComponent},
+const routes: Routes = [
+  {path:'', redirectTo: 'home', pathMatch:'full'},
+  // {path:'home',component:AppComponent},
+  {path:'donations',component:DonationsComponent},
+  {path:'gift/:id',component:GiftComponent},
+  {path:'addDonationType',component:AddDonationTypeComponent},
+  {path:'shoppingcart',component:ShoppingcartComponent},
+  {path:'donations/updateDonation/:id',component:UpdateDonationComponent}
 
 
- // {path: '**', component:PageNotFoundComponentComponent},
-  
-   
-];
+    // children:[
+    //   {path:'Add',component:AddDonationTypeComponent},
+    //   {path:'Delete',component:DeleteDonationTypeComponent}
+    //   ]
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

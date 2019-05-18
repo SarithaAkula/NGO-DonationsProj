@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h2> Updating DonationType</h2>
+
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>DonationType Name</label>
+      
+      <input type="text" formControlName="donationType" class="form-control" >
+      <!-- [(ngModel)]="donationType"
+      required #myControl="ngModel" -->
+    
+        <small class="text-danger" *ngIf="donationType.errors?.required">DonationType is required</small>
+        <small class="text-danger" *ngIf="donationType.errors?.minlength">DonationType must be at least 1 characters</small>
+      
+    </div>
+    <button class="btn btn-primary"  type="button" (click)="gotoDonation()">Cancel</button>
+
+    <button class="btn btn-primary" [disabled]="!updateForm.valid" type="submit">Submit</button>
+
+  </form>
+</div>
