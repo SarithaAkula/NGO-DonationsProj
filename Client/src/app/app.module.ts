@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
+import { DoComponent } from './do/do.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { TestComponent } from './test/test.component';
     DonationsComponent,
     DonationComponent,
     GiftComponent,
-    TestComponent
+    TestComponent,
+    DoComponent
     
   ],
   imports: [

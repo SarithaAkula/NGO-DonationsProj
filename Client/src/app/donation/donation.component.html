@@ -3,10 +3,31 @@
   <h2>Make a Donation(user view)</h2>
   <h4>Click on any one Donation Type to continue</h4>
 
-  <ul class="items">
+  <ul *ngFor="let donationType of donations" >
 
-    <li *ngFor="let donationType of donationTypes" (click)="onSelect(donationType)"> 
-      <span class="budge"></span>{{donationType.name}}
-  </li>
+      <li><a routerLink="donationTypes/:id" routerLinkActive="active" 
+        (click)="onSelect(donationType)">{{donationType.donationType}}</a></li>
 </ul>
 </div>
+
+<!-- <table class="table table-bordered">
+
+
+  <div>
+      <li>
+          <a routerLink="Home/donationTypes" routerLinkActive="active" 
+          *ngFor="let donationType of donations" (click)="onSelect(donationType)">{{donationType.donationType}}</a>
+      </li> -->
+    <!-- <tr *ngFor="let donationType of donations;
+              let i = index;
+              let e = even;
+              let o = odd"
+              [ngClass]="{odd:o, even:e}"  >
+      <td>{{donationType.donationType}}</td> -->
+ 
+      <!-- <td (click) = "onSelect(donationType)">Edit</td>
+      <td (click) = "delete(donationType._id)">Delete</td>
+   
+    
+    </div>
+</table> -->
