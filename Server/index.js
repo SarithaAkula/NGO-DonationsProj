@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const users = require('./Routes/route');
 const donations = require('./Routes/donations');
+const shoppingcart = require('./Routes/donationmanagment');
+app.use('/',shoppingcart)
 app.use('/',donations);
 app.use('/',users);
 

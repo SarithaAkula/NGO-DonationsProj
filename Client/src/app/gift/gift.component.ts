@@ -4,7 +4,9 @@ import { FormBuilder } from '@angular/forms';
 import {FormGroup, FormControl, FormArray, Validators} from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms' ;
 import { Donations } from '../Donations';
-import {DonationsService} from '../donations.service';
+import {DonationsService } from '../donations.service';
+import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCart } from '../ShoppingCart';
 
 
 @Component({
@@ -14,11 +16,14 @@ import {DonationsService} from '../donations.service';
 })
 export class GiftComponent  {
   public donationId: string;
+  public donationType : String;
   public donations: Donations;
   public details=true;
+  shoppingCartModel:ShoppingCart;
   
 
-  constructor( private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService) 
+  constructor( private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService,
+  private _shoppingCartService:ShoppingCartService) 
   {
     this.route.paramMap.subscribe((params: ParamMap) => {
     let id = params.get('id');
@@ -27,10 +32,27 @@ export class GiftComponent  {
     this._donationsService.getDetail(this.donationId).subscribe( data => {
       let donation = data;
       this.donations = donation;
+      this.donationType = this.donations.donationType;
     });
-    
   }
-}
+    onSubmit(){
+      // console.log(this.shoppingCartModel);
+      // this.submitted = true;
+      // this._shoppingCartService.enroll(this.shoppingCartModel)
+      // .subscribe(response => console.log('Success!',response),
+      // error => this.errorMsg = error.statusText
+      // )
+    }
+
+  
+  goBackDonation(){
+   this.router.navigate(['donations']); 
+     }
+  
+  gotoCart(){
+   this.router.navigate(['shoppingcart',this.donationId]); 
+   }
+  }
 
 
   //   this.registrationForm= this.fb.group({

@@ -92,17 +92,15 @@
   </form>
 </div> -->
 <h4>GIFTS</h4>
+<label>{{donations.donationType}} </label>
 <form name="myForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-  <label>{{donations.donationType}} $ </label>
   <input type="number" #price = "ngModel" name = "price " class="form-control"
   [class.is-invalid] = "price.invalid && price.touched" [(ngModel)] = "shoppingCartModel.price">
         <small class="text-danger" [class.d-none] = "price.valid || price.untouched">Money is Required</small>
   <p>
-        <label>Check for monthly recurring Gift: <input type="checkbox" ng-model="checked"></label>
-  
+      <label>Check for monthly recurring Gift: <input type="checkbox" ng-model="checked"></label>
   </p>
-  
   <p>
       <button type="button" (click)="goBackDonation()">Back</button>
   </p>
@@ -111,4 +109,4 @@
 </form>
 <div class = "alert alert-danger" *ngIf = "errorMsg">
     {{errorMsg}}
-  </div>
+</div>

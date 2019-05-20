@@ -10,6 +10,8 @@ import { UserComponent } from './user/user.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { DonationsComponent } from './donations/donations.component';
 import { GiftComponent } from './gift/gift.component';
+import { DonationsManagmentComponent } from './donations-managment/donations-managment.component';
+import { DonationsManagmentDetailsComponent } from './donations-managment-details/donations-managment-details.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { GiftComponent } from './gift/gift.component';
     ShoppingcartComponent,
     DonationsComponent,
     GiftComponent,
+    DonationsManagmentComponent,
+    DonationsManagmentDetailsComponent,
     
   ],
   imports: [
