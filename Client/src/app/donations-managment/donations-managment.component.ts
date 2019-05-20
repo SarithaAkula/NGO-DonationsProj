@@ -17,6 +17,7 @@ public shoppingcartOrders =[];
 public details=true;
 public updatedDonationOrder: ShoppingCart;
 updated = false;
+public user = JSON.parse(localStorage.getItem("user"));
 constructor( private route:ActivatedRoute, private router:Router, private _donationManagmentService: DonationManagmentService) { 
   this._donationManagmentService.getData()
     .subscribe( data => this.shoppingcartOrders = data);

@@ -17,6 +17,8 @@ export class SigninComponent{
   user = new user('','','','',null,'','','','','',null,'','',null);
   id:string;
 
+
+
   constructor(private _signinService: SigninService,private router:Router) { }
   onSubmit(){
     console.log(this.signinModel);
@@ -27,11 +29,16 @@ export class SigninComponent{
         let id = Response.user._id;
         this.id = id;
         localStorage.setItem("user", JSON.stringify(Response.user));
+        localStorage.setItem("login", "true");
         console.log(Response.user.role)
         if(Response.user.role == 'Admin'){
+          localStorage.setItem("admin", "true");
           this.router.navigate(['./user']);
+          
         }else{
+          localStorage.setItem("admin", "false");
           this.router.navigate(['/home/UserView']);
+          
         }
       }
     );

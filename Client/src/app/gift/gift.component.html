@@ -1,10 +1,10 @@
 
 
-{{donations.donationType}}
+
 
 
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
-
+    {{donations.donationType}}
     <div class="form-group">
         <label>Amount $</label>
         <input type="number" #price="ngModel" required class="form-control" 
@@ -16,7 +16,7 @@
     </p>
 
       <button type="button" (click)="goBackDonation()">Back</button>
-    <button type="button" (click)="addtoCart()">go to cart</button>
+    <button type="button" (click)="addtoCart()">Add to cart</button>
 </form>
 
 <button type="button" (click)="gotoCart()">go to cart</button>

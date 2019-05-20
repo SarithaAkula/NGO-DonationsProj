@@ -38,4 +38,8 @@ export class DonationsComponent implements OnInit {
     this.router.navigate(['./addDonationType']);
   }
 
+  gotoCart(){
+    this.router.navigate(["./shoppingcart"]);
+  }
+
 }
