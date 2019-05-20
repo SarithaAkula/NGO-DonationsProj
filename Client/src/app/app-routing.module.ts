@@ -13,6 +13,7 @@ const routes: Routes = [
   {path:'donations',component:DonationsComponent},
   {path:'donations/donationMgt',component:DonationsManagmentComponent},
   {path:'donations/donationMgt/:donationId',component:DonationsManagmentDetailsComponent},
+  {path:'UpdateshoppingcartOrder/:donationId',component:DonationsManagmentDetailsComponent},
   {path:'gift/:id',component:GiftComponent}
     // children:[
     //   {path:'Add',component:AddDonationTypeComponent},
