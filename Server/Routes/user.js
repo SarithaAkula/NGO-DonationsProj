@@ -125,8 +125,7 @@ router.post('/signin', function(req, res){
                 return res.status(200).json({
                     success: 'welcome to the JWT Auth',
                     token: JWTToken,
-                    _id: user._id,
-                    role: user.role
+                    user: user
                 });                
             }
             return res.status(401).json({

@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
 const shoppingCartSchema = new mongoose.Schema({
-    username:String,
+    firstName:String,
+    lastName:String,
     email:String,
     orderId:Number,
-    donnationType:String,
+    donationType:String,
     price:Number,
     monthly:Boolean,
     date:Date

@@ -24,15 +24,19 @@ export class SigninComponent{
     this._signinService.signin(this.signinModel)
     .subscribe(
       Response => {
-        let id = Response._id;
+        let id = Response.user._id;
         this.id = id;
-        if(Response.role == 'Admin'){
+        localStorage.setItem("user", JSON.stringify(Response.user));
+        console.log(Response.user.role)
+        if(Response.user.role == 'Admin'){
           this.router.navigate(['./user']);
         }else{
-          this.router.navigate(['/home', this.id]);
+          this.router.navigate(['/home/UserView']);
         }
       }
     );
+
+
     
     //this.router.navigate(['./user']);
   }

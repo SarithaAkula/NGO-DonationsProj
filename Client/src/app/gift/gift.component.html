@@ -1,0 +1,22 @@
+
+
+{{donations.donationType}}
+
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label>Amount $</label>
+        <input type="number" #price="ngModel" required class="form-control" 
+        [class.is-invalid]="price.invalid && price.touched" name="price" [(ngModel)]="shoppingCartModel.price">
+        <small class="text-danger" [class.d-none]="price.valid || price.untouched"> price is required </small>  
+      </div>
+    <p>
+        <input type="checkbox" [(ngModel)]="shoppingCartModel.monthly">
+    </p>
+
+      <button type="button" (click)="goBackDonation()">Back</button>
+    <button type="button" (click)="addtoCart()">go to cart</button>
+</form>
+
+<button type="button" (click)="gotoCart()">go to cart</button>

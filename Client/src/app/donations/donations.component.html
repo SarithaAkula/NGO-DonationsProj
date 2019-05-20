@@ -1,5 +1,20 @@
-<p>
-  {{userId}}
+<body>
+    <div>
+      <h2>{{user.email}}</h2>
+    </div>
+    <div class = "column middle">
+      <h2>Click any donation to continue</h2>
+      <div *ngFor="let donationType of donationTypes">
+       
+            <p (click)="onSelect(donationType)">
+                {{donationType.donationType}}
+            </p> 
+      </div>
 
-  {{user.email}}
-</p>
+      <router-outlet></router-outlet>
+      
+    </div>
+    
+  </body>
+    
+

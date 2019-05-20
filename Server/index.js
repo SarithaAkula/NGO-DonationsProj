@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const users = require('./Routes/user');
+const donations = require('./Routes/donations');
+const shoppingcart = require('./Routes/donationmanagement');
+
+app.use('/',shoppingcart);
+app.use('/',donations);
 
 app.use('/',users);
 
