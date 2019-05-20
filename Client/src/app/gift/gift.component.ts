@@ -51,6 +51,9 @@ export class GiftComponent  {
     this._location.back();
   }
   addtoCart(){
+    var x = document.getElementById("myCheck").checked;
+    //console.log(x);
+    this.shoppingCartModel.monthly = x;
     let sp = this.shoppingCartModel;
     if(this.storedcart === null){
       this.cart.push(sp);

@@ -12,7 +12,8 @@
         <small class="text-danger" [class.d-none]="price.valid || price.untouched"> price is required </small>  
       </div>
     <p>
-        <input type="checkbox" [(ngModel)]="shoppingCartModel.monthly">
+      <label> donate monthly</label>
+        <input type="checkbox" id="myCheck" name="monthly">
     </p>
 
       <button type="button" (click)="goBackDonation()">Back</button>

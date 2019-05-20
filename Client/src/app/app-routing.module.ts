@@ -10,6 +10,8 @@ import { GiftComponent } from './gift/gift.component';
 import { DonationsManagmentComponent } from './donations-managment/donations-managment.component';
 import { DonationsManagmentDetailsComponent } from './donations-managment-details/donations-managment-details.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { AddDonationTypeComponent } from './add-donation-type/add-donation-type.component';
+import { UpdateDonationTypeComponent } from './update-donation-type/update-donation-type.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/home', pathMatch:'full'},
@@ -26,10 +28,14 @@ const routes: Routes = [
   },
 
   {path:'donations',component:DonationsManagmentComponent},
-  {path:'donations/:donationId',component:DonationsManagmentDetailsComponent},
+  {path:'donationsManagmentDetails',component:DonationsManagmentDetailsComponent},
+  {path:'donationsManagmentDetails/:donationId',component:UpdateDonationTypeComponent},
   {path:'shoppingcart',component:ShoppingcartComponent},
-
-
+    // children:[
+    //   {path:'Add',component:AddDonationTypeComponent},
+    //   {path:'Delete',component:DeleteDonationTypeComponent}
+    //   ]
+  {path:'addDonationType',component:AddDonationTypeComponent},
  
 ]
 
