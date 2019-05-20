@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ParamMap, ActivatedRoute, Router, Params } from '@angular/router';
 import { Donations } from '../shared/model/donations';
-import { DonationManagmentService } from '../donation-managment.service';
+import { DonationsService } from '../donations.service';
 
 @Component({
   selector: 'app-update-donation-type',
   templateUrl: './update-donation-type.component.html',
   styleUrls: ['./update-donation-type.component.css']
 })
-export class UpdateDonationTypeComponent implements OnInit {
+export class UpdateDonationTypeComponent{
   public donations:Donations;
   public donationId:string;
   updated = false;
-  constructor( private route:ActivatedRoute, private router:Router, private _donationManagmentService: DonationManagmentService) {
+  constructor( private route:ActivatedRoute, private router:Router, private _donationManagmentService: DonationsService) {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('donationId');
       this.donationId = id;
@@ -23,6 +23,7 @@ export class UpdateDonationTypeComponent implements OnInit {
       this.donations = donations;
     });
    }
+
    updateDetails() {
     let donations = this.donations;
     console.log(donations);
@@ -32,8 +33,6 @@ export class UpdateDonationTypeComponent implements OnInit {
       Response => console.log("successs!", Response)
     );
     this.router.navigate(['./donationsManagmentDetails']);
+    
   }
-  ngOnInit() {
-  }
-
 }

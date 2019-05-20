@@ -1,6 +1,4 @@
-<p>
-    donation managment details works!
-  </p>
+
   <table class="table table-bordered">
     <thead>
       <tr><th>Donation Type</th></tr>  
@@ -8,7 +6,7 @@
     <tbody>
       <tr *ngFor="let u of donationTypes; let i = index"  >
         <td>{{u.donationType}}</td>
-        <td><button (click) = "onSelect(u)">Edit </button> </td>
+        <td><button (click) = "onSelect(u)">Edit</button> </td>
          <td><button (click) = "delete(u._id)">Delete</button></td>
       </tr>
     </tbody>

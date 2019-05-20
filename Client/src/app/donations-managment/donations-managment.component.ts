@@ -3,7 +3,7 @@ import { Donations } from '../shared/model/Donations';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { ShoppingcartService } from '../shoppingcart.service';
 import { ShoppingCart } from '../shared/model/ShoppingCart';
-import { DonationManagmentService } from '../donation-managment.service'
+import { DonationsService } from '../donations.service'
 
 @Component({
   selector: 'app-donations-managment',

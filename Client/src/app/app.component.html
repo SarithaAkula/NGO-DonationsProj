@@ -13,8 +13,9 @@
                 </li>
                 <li style="float:right"><a routerLink="/home/UserView" routerLinkActive="active">Donation(User view)</a>
                 </li>
-                <li style="float:right" (click)="logout()">log out</li>
+                <li style="float:right" (click)="logout()"><a routerLinkActive="active">logout</a></li>
             </ul>
+            <li style="float:right"><a routerLinkActive="active">{{user.email}}</a></li>
 
         </div>
     </ng-template>
@@ -22,7 +23,8 @@
         <div class="topnav">
             <li style="float:right"><a routerLink="/home/UserView" routerLinkActive="active">Donation(User view)</a>
             </li>
-            <li style="float:right" (click)="logout()">log out</li>
+            <li style="float:right" (click)="logout()"><a routerLinkActive="active">logout</a></li>
+            <li style="float:right"><a routerLinkActive="active">{{user.email}}</a></li>
         </div>
     </ng-template>
 </div>

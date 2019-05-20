@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCart } from '../shared/model/ShoppingCart';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { DonationManagmentService } from '../donation-managment.service';
 import { DonationsService } from '../donations.service';
 
 
@@ -14,7 +13,7 @@ export class DonationsManagmentDetailsComponent implements OnInit {
   public donationTypes = [];
   
   
-  constructor(private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService,private _donationManagmentService: DonationManagmentService) {
+  constructor(private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService) {
     
     }
   
