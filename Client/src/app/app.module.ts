@@ -15,7 +15,9 @@ import { DonationsComponent } from './donations/donations.component';
 import { GiftComponent } from './gift/gift.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { DonationsManagmentComponent } from './donations-managment/donations-managment.component';
-import { DonationsManagmentDetailsComponent } from './donations-managment-details/donations-managment-details.component'
+import { DonationsManagmentDetailsComponent } from './donations-managment-details/donations-managment-details.component';
+import { AddDonationTypeComponent } from './add-donation-type/add-donation-type.component';
+import { UpdateDonationTypeComponent } from './update-donation-type/update-donation-type.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DonationsManagmentDetailsComponent } from './donations-managment-detail
     GiftComponent,
     ShoppingcartComponent,
     DonationsManagmentComponent,
-    DonationsManagmentDetailsComponent
+    DonationsManagmentDetailsComponent,
+    AddDonationTypeComponent,
+    UpdateDonationTypeComponent
   ],
   imports: [
     BrowserModule,

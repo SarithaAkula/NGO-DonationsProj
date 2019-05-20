@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { UserService } from '../user.service'
 import { user } from '../shared/model/user';
-import {DonationsService } from '../donations.service'
+import { DonationsService } from '../donations.service'
 
 @Component({
   selector: 'app-donations',
@@ -25,7 +25,6 @@ export class DonationsComponent implements OnInit {
     this._donationsService.getData()
     .subscribe( data => this.donationTypes = data);
 
-    //console.log(localStorage.getItem("user"));
   }
     
 
@@ -34,8 +33,9 @@ export class DonationsComponent implements OnInit {
     this.router.navigate(["./gift",donationType._id]);
   }
 
-  addDonationType(){
-    this.router.navigate(['./addDonationType']);
+
+  gotoCart(){
+    this.router.navigate(["./shoppingcart"]);
   }
 
 }

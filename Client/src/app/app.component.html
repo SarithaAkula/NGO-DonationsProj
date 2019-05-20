@@ -1,3 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
+<div *ngIf="login">
+    <div *ngIf="admin==true;then Admin;else User">
+    </div>
+
+    <ng-template #Admin>
+        <div class="topnav">
+            <a routerLink="/home" routerLinkActive="inactivate">NGO</a>
+            <ul>
+                <li style="float:right"><a routerLink="/user" routerLinkActive="active">User Management</a></li>
+                <li style="float:right"><a routerLink="/donations" routerLinkActive="active">Donation Management</a>
+                </li>
+                <li style="float:right"><a routerLink="/home/UserView" routerLinkActive="active">Donation(User view)</a>
+                </li>
+                <li style="float:right" (click)="logout()">log out</li>
+            </ul>
+
+        </div>
+    </ng-template>
+    <ng-template #User>
+        <div class="topnav">
+            <li style="float:right"><a routerLink="/home/UserView" routerLinkActive="active">Donation(User view)</a>
+            </li>
+            <li style="float:right" (click)="logout()">log out</li>
+        </div>
+    </ng-template>
+</div>
 <router-outlet></router-outlet>

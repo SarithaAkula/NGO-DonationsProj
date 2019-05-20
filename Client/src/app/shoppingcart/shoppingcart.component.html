@@ -1,3 +1,18 @@
 <div *ngFor="let c of items">
-<p>{{c.price}}</p>
+<table>
+    <thead>
+        <th>item name</th>
+        <th>price</th>
+        <th>monthly donation</th>
+    </thead>
+    <tbody>
+        <td>{{c.donationType}}</td>
+        <td>{{c.price}}</td>
+        <td>{{c.monthly}}</td>
+    </tbody>
+</table>
+
 </div>
+
+<p>total: {{total}}</p>
+<button (click)="onSubmit()">submit order</button>

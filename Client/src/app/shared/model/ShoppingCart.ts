@@ -8,6 +8,6 @@ export class ShoppingCart{
     public donationType:String,
     public price:Number,
     public monthly:Boolean,
-    public date:String
+    public date:Date
     ){}  
 }

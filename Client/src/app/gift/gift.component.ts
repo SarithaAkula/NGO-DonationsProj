@@ -17,7 +17,7 @@ export class GiftComponent  {
   cart = [];
   public storedcart = JSON.parse(localStorage.getItem("items"));
   public user = JSON.parse(localStorage.getItem("user"));
-  public shoppingCartModel = new ShoppingCart(this.user.firstName,this.user.lastName,null,this.user.email,"",null,null,null);
+  public shoppingCartModel = new ShoppingCart(this.user.firstName,this.user.lastName,null,this.user.email,"",null,null,new Date());
   public submitted:boolean;
 
   constructor( private route:ActivatedRoute, private router:Router, 
@@ -51,6 +51,9 @@ export class GiftComponent  {
     this._location.back();
   }
   addtoCart(){
+    var x = document.getElementById("myCheck").checked;
+    //console.log(x);
+    this.shoppingCartModel.monthly = x;
     let sp = this.shoppingCartModel;
     if(this.storedcart === null){
       this.cart.push(sp);
