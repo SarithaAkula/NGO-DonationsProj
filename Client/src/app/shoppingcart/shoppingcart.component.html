@@ -1,4 +1,4 @@
-<head>
+<!-- <head>
     <title>ShoppingCart</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,3 +21,53 @@
       <button>Car</button>
       </div>
 </body>
+ -->
+ <div class="container">
+
+
+ <div class="shopping-cart float-left">
+  
+  <div class="title">
+    Shopping Cart
+  </div>
+ 
+  
+  <div class="item">
+    <div class="buttons">
+      <button class="delete-btn" type="button" name="button">X</button>
+    </div>
+ 
+    <div class="image">
+        <img src="assets/images/Screenshot (133).png">
+    </div>
+ 
+    <div class="description">
+      <span>General Donation Fund</span> 
+    </div>
+ 
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button" (click)="Add()">+</button>
+      <input type="text" name="name" value={{this.count}}>
+      <button class="minus-btn" type="button" name="button" (click)="Delete()">-</button>
+    </div>
+ 
+    <div class="total-price">$100</div>
+  </div>
+
+
+  <div class="item"> 
+      <div class="total-price">TOTAL</div>
+      <div class="total-price">$100</div>
+  </div>
+
+  <div class="item">
+            <a routerLink="" routerLinkActive="active" class="p-2 text-muted" >EMPTY CART</a>
+            <a routerLink="" routerLinkActive="active" class="p-2 text-muted" >UPDATE CART</a>
+ </div>
+    
+
+ <button class="CheckOut button"  role="button" >CheckOut >>></button>
+ 
+
+
+</div>

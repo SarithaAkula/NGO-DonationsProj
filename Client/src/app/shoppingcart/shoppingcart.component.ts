@@ -9,7 +9,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
 })
 export class ShoppingcartComponent implements OnInit {
 
-  
+  public count=1;
   //private cart: ShoppingCart[];
 
 	constructor(
@@ -19,5 +19,13 @@ export class ShoppingcartComponent implements OnInit {
 	ngOnInit() {
 		// this.cart = this.shoppingCartService.findAll();
 	}
+
+	Add(){
+    this.count++;
+	}
+	
+	Delete(){
+    this.count--;
+  }
 
 }
