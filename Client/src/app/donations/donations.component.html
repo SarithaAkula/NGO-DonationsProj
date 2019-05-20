@@ -7,32 +7,32 @@
 </ul>
 </div>
 
-<div class = "column middle">
-  <h2>Click any donation to continue</h2>
-<!-- <nav>
-  <a routerLink="donations/:id/gift" routerLinkActive="active" 
-  *ngFor="let donationType of donationTypes" (click)="onSelect(donationType)">{{donationType.donationType}}</a>
-  <button type="button" *ngFor="let donationType of donationTypes" (click)="delete(donationType._id)">Delete a DonationType</button>
-</nav> -->
-<nav *ngFor="let donationType of donationTypes">
-  <a routerLink="donations/:id/gift" routerLinkActive="active" class="btn btn-secondary active"
-   (click)="onSelect(donationType)">{{donationType.donationType}}</a>
-   <button type="button" class="btn btn-outline-secondary btn-lg" (click)="goUpdatePage(donationType)">Update</button>
 
-  <button type="button" class="btn btn-outline-danger btn-lg" (click)="delete(donationType._id)">Delete</button>
-
-  <!-- <button type="button" class="close" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button> -->
-</nav>
-</div>
 <!-- <div routerLink="/gift" routerLinkActive="active" 
 *ngFor="let donationType of donationTypes" >{{donationType.donationType}}
 <input  type="Number" name="Price">
 <input type="submit" value="AddtoCart">
 </div> -->
 
-<button type="button" (click)="add()">Add a DonationType</button>
+<!-- <button type="button" (click)="add()">Add a DonationType</button> -->
+
+<main role="main" class="container column middle">
+  <div class="jumbotron">
+    <h1>Make a Donation</h1>
+    <p class="lead">Click on any one Donation Type to continue</p>
+    <div class="nav-scroller py-1 mb-2" *ngFor="let donationType of donationTypes">
+      <nav class="nav d-flex justify-content-between">
+        <a routerLink="donations/:id/gift" routerLinkActive="active" class="p-2 text-muted"
+        (click)="onSelect(donationType)">{{donationType.donationType}}</a>
+        <div>
+        <button type="button" class="btn btn-outline-secondary " (click)="goUpdatePage(donationType)">Update</button>
+        <button type="button" class="btn btn-outline-danger " (click)="delete(donationType._id)">Delete</button>
+        </div>
+      </nav>
+    </div>
+    <button class="btn btn-primary" href="/docs/4.3/components/navbar/" role="button" (click)="add()">Add a DonationType &raquo;</button>
+  </div>
+</main>
 </body>
 
   

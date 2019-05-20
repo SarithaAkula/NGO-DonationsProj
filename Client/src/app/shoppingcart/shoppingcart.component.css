@@ -14,7 +14,7 @@ table {
   
   table.b {
     table-layout: fixed;
-    width: 180px;  
+    width: 10px;  
   }
   
   table.c {
@@ -26,3 +26,34 @@ table {
     table-layout: fixed;
     width: 100%;  
   }
+
+  navigation {
+    width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+        font-size: 90%;
+        font-weight: bold;
+    }
+     ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      }
+      
+       li {
+      border-bottom: 1px solid #C3DBFB;
+      }
+      
+       li a:link, #navigation li a:visited {
+      display: block;
+      padding: 9px 5px 5px 0.5em;
+      border-left: 13px solid #033CC2;
+      border-right: 1px solid #033CC2;
+      background-color: #C3DBFB;
+      color: rgb(27, 10, 10);
+      text-decoration: none;
+      }
+      
+       li a:hover {
+      background-color: #033CC2;
+      color: rgb(59, 46, 46);
+      }
