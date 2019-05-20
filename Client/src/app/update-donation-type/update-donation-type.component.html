@@ -1,0 +1,15 @@
+<p>
+  update-donation-type works!
+</p>
+<div class = "container-fluid" *ngIf="!submitted">
+    <h2>DonationType Information</h2>
+    <form #donationTypeForm="ngForm"  (ngSubmit)="updateDetails(donationTypeForm)" novalidate>
+        <div class="form-group">
+            <label>DonationType</label>
+            <input type="text" #donationType="ngModel" required class="form-control" 
+            [class.is-invalid]="donationType.invalid" name="donationType" [(ngModel)]="donationType.donationType">
+            <small class="text-danger" [class.d-none]="donationType.valid"> donationType is required </small>  
+        </div>
+      <button class="btn btn-primary" type="submit" >save</button>
+    </form>
+  </div>

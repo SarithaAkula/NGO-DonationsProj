@@ -21,11 +21,6 @@ export class DonationsComponent implements OnInit {
     this.router.navigate(['./gift', donationType._id]);
   }
 
-  addDonationType(){
-    this.router.navigate(['']);
-    this.router.navigate(['./addDonationType']);
-  }
-
 }
   
 

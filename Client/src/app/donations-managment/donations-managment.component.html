@@ -1,18 +1,14 @@
-<p>
-  donations-managment works!
-</p>
-<button (click) = "addDonationType()">
-    add Donation Type
+
+<button (click) = "allDonationTypes()">
+    All Donation Types
 </button>
 <table class="table table-bordered">
-
   <thead>
       <tr>
           <th>User Name</th>
           <th>Date</th>
           <th>Ammount</th>
           <th>DonationType</th>
-        
       </tr>  
   </thead>
   <tbody>
@@ -21,9 +17,7 @@
       <td>{{u.date}}</td>
       <td>{{u.price}}</td>
       <td>{{u.donationType}}</td>
-      <td><button (click) = "onSelect(u)">Edit </button></td>
       <td><button (click) = "delete(u._id)">Delete</button></td>
     </tr>
-    
   </tbody>
 </table>

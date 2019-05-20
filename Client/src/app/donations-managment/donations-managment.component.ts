@@ -3,6 +3,7 @@ import { Donations } from '../Donations';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { DonationManagmentService } from '../donation-managment.service';
 import { ShoppingCart } from '../ShoppingCart';
+import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
   selector: 'app-donations-managment',
@@ -17,24 +18,23 @@ public shoppingcartOrders =[];
 public details=true;
 public updatedDonationOrder: ShoppingCart;
 updated = false;
-constructor( private route:ActivatedRoute, private router:Router, private _donationManagmentService: DonationManagmentService) { 
-  this._donationManagmentService.getData()
+constructor( private route:ActivatedRoute, private router:Router, private _shoppingCartService: ShoppingCartService) { 
+  this._shoppingCartService.getData()
     .subscribe( data => this.shoppingcartOrders = data);
   }  
   
-onSelect(shoppingcartOrder){
-  this.router.navigate(['/UpdateshoppingcartOrder', shoppingcartOrder._id]);
-}
+
 
 delete(id){
-  this._donationManagmentService.delete(id).subscribe(
+  this._shoppingCartService.delete(id).subscribe(
     Response => console.log("successs!", Response)
   );
   this.router.navigate(['./deletedonationType']);
   location.reload();
 }
 
-addDonationType(){
-  this.router.navigate(['./adddonationType']);
+allDonationTypes(){
+  this.router.navigate(['./donationsManagmentDetails']);
 }
+
 }

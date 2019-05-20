@@ -1,7 +1,7 @@
 export class Donations{
     constructor(
-        public donationId:String,
+        //public donationId:String,
         public donationType:String,
-        public image:String
+        //public image:String
     ){}
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ShoppingCart } from '../ShoppingCart';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { DonationManagmentService } from '../donation-managment.service';
+import { DonationsService } from '../donations.service';
+
 
 @Component({
   selector: 'app-donations-managment-details',
@@ -9,32 +11,30 @@ import { DonationManagmentService } from '../donation-managment.service';
   styleUrls: ['./donations-managment-details.component.css']
 })
 export class DonationsManagmentDetailsComponent implements OnInit {
-
-  public shoppingcartId:string;
-  public shoppingcart:ShoppingCart;
-  updated = false;
-  constructor(private route:ActivatedRoute, private router:Router, private _donationManagmentService: DonationManagmentService) {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      let id = params.get('shoppingcartId');
-      this.shoppingcartId = id;
-   });
-   this._donationManagmentService.getDetail(this.shoppingcartId).subscribe( data => {
-    let shoppingcart = data;
-    this.shoppingcart = shoppingcart;
-  });
+  public donationTypes = [];
+  
+  
+  constructor(private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService,private _donationManagmentService: DonationManagmentService) {
+    
+    }
+  
+  ngOnInit() {
+    this._donationsService.getData()
+    .subscribe( data => this.donationTypes = data);
   }
-  updateDetails() {
-    //console.log(this.user);
-    let shoppingcart = this.shoppingcart;
-    console.log(shoppingcart);
-    this.updated = true;
-    this._donationManagmentService.update(this.shoppingcartId, shoppingcart)
-    .subscribe(
+  
+  addDonationType(){
+    this.router.navigate(['./addDonationType']);
+  }
+  onSelect(donationTypes){
+    this.router.navigate(['/donations/donationMgt', donationTypes._id]);
+  }
+  delete(id){
+    this._donationManagmentService.delete(id).subscribe(
       Response => console.log("successs!", Response)
     );
-    this.router.navigate(['./donations/donationMgt']);
+    this.router.navigate(['./deletedonationType']);
+    location.reload();
   }
-  ngOnInit() {
-  }
-
+  
 }

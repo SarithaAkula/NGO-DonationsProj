@@ -1,32 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ShoppingCart } from './ShoppingCart';
+
+import { Donations } from './donations';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonationManagmentService {
 
-  private _url: string = "http://localhost:4000/api/shoppingcart";
+  private _url: string = "http://localhost:4000/api/donations";
 
   constructor(private http:HttpClient) { }
 
-  getData(): Observable<ShoppingCart[]>{
-     return this.http.get<ShoppingCart[]>(this._url);
+  
+  getData(): Observable<Donations[]>{
+     return this.http.get<Donations[]>(this._url);
   }
 
-
-  getDetail(shoppingcartId:string): Observable<ShoppingCart>{
-    return this.http.get<ShoppingCart>(this._url+'/'+shoppingcartId);
+  getDetail(donationId:string): Observable<Donations>{
+    return this.http.get<Donations>(this._url+'/'+donationId);
   }
 
-  update(shoppingcartId:string, shoppingcart: ShoppingCart){
-    return this.http.put(this._url+'/'+shoppingcartId, shoppingcart);
+  update(donationId:string, donations: Donations){
+    return this.http.put(this._url+'/'+donationId, donations);
   }
 
-  delete(shoppingcartId:string){
-    return this.http.delete(this._url+'/'+shoppingcartId);
+  delete(donationId:string){
+    return this.http.delete(this._url+'/'+donationId);
   }
 }
 
