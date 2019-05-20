@@ -14,6 +14,7 @@ export class DonationsComponent implements OnInit {
   public userId: string;
   public user: user;
    public donationTypes = [];
+   public click = false;
 
 
   constructor(private route: ActivatedRoute, private router: Router, 
@@ -34,12 +35,13 @@ export class DonationsComponent implements OnInit {
     this._donationsService.getData()
     .subscribe( data => this.donationTypes = data);
 
-    console.log(localStorage.getItem("user"));
+    //console.log(localStorage.getItem("user"));
   }
     
 
   onSelect(donationType){
-    this.router.navigate(['gift', donationType._id], {relativeTo:this.route});
+    //this.click =  true;
+    this.router.navigate(["./gift",donationType._id], {relativeTo:this.route});
   }
 
   addDonationType(){

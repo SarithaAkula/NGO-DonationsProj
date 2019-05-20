@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingCart } from '../shared/model/ShoppingCart';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-shoppingcart',
@@ -8,10 +9,15 @@ import { ShoppingCart } from '../shared/model/ShoppingCart';
 })
 export class ShoppingcartComponent implements OnInit {
 
-  @Input() item: ShoppingCart;
-  constructor() { }
+
+  public items=JSON.parse(localStorage.getItem("items"));
+
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+  
   }
 
 }

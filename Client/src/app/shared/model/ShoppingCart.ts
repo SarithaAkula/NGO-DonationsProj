@@ -1,11 +1,13 @@
+    
 export class ShoppingCart{
     constructor(
-    public username:String,
-    public email: string,
+    public firstName:String,
+    public lastName:String,
     public orderId:Number,
-    public donnationType:String,
+    public email: String,
+    public donationType:String,
     public price:Number,
     public monthly:Boolean,
-    public date:Date
+    public date:String
     ){}  
 }

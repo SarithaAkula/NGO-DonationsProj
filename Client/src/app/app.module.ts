@@ -13,7 +13,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { HomeComponent } from './home/home.component';
 import { DonationsComponent } from './donations/donations.component';
 import { GiftComponent } from './gift/gift.component';
-import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component'
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { DonationsManagmentComponent } from './donations-managment/donations-managment.component';
+import { DonationsManagmentDetailsComponent } from './donations-managment-details/donations-managment-details.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component'
     HomeComponent,
     DonationsComponent,
     GiftComponent,
-    ShoppingcartComponent
+    ShoppingcartComponent,
+    DonationsManagmentComponent,
+    DonationsManagmentDetailsComponent
   ],
   imports: [
     BrowserModule,

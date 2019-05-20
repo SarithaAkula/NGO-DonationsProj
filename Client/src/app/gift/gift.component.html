@@ -1,5 +1,6 @@
-<h4>{{shoppingCartModel.donnationType}}</h4>
 
+
+{{donations.donationType}}
 
 
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
@@ -11,13 +12,11 @@
         <small class="text-danger" [class.d-none]="price.valid || price.untouched"> price is required </small>  
       </div>
     <p>
-        <input type="checkbox" [(ngModel)]="shoppingCartModel.monthly"
-        ng-true-value="'true'" ng-false-value="'false'">
+        <input type="checkbox" [(ngModel)]="shoppingCartModel.monthly">
     </p>
 
       <button type="button" (click)="goBackDonation()">Back</button>
-    <button type="button" (click)="gotoCart()">go to cart</button>
-    <div *ngIf="submitted">
-        <app-shoppingcart [item]=shoppingCartModel></app-shoppingcart>
-    </div>
+    <button type="button" (click)="addtoCart()">go to cart</button>
 </form>
+
+<button type="button" (click)="gotoCart()">go to cart</button>

@@ -4,17 +4,17 @@
     </div>
     <div class = "column middle">
       <h2>Click any donation to continue</h2>
-    <nav  *ngFor="let donationType of donationTypes">
-      <a routerLink="/gift" routerLinkActive="active" 
-      (click)="onSelect(donationType)">{{donationType.donationType}}</a>
-    </nav>
+      <div *ngFor="let donationType of donationTypes">
+       
+            <p (click)="onSelect(donationType)">
+                {{donationType.donationType}}
+            </p> 
+      </div>
+
+      <router-outlet></router-outlet>
+      
     </div>
-    <!-- <div routerLink="/gift" routerLinkActive="active" 
-    *ngFor="let donationType of donationTypes" >{{donationType.donationType}}
-    <input  type="Number" name="Price">
-    <input type="submit" value="AddtoCart">
-    </div> -->
+    
   </body>
     
 
-  <router-outlet></router-outlet>
