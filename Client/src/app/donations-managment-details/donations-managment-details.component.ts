@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingCart } from '../ShoppingCart';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { DonationManagmentService } from '../donation-managment.service';
 import { DonationsService } from '../donations.service';
 
 
@@ -12,13 +10,9 @@ import { DonationsService } from '../donations.service';
 })
 export class DonationsManagmentDetailsComponent implements OnInit {
   public donationTypes = [];
-  
-  
-  constructor(private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService,private _donationManagmentService: DonationManagmentService) {
-    
-    }
-  
-  ngOnInit() {
+  constructor(private route:ActivatedRoute, private router:Router, private _donationsService: DonationsService) 
+  {}
+    ngOnInit() {
     this._donationsService.getData()
     .subscribe( data => this.donationTypes = data);
   }
@@ -30,11 +24,9 @@ export class DonationsManagmentDetailsComponent implements OnInit {
     this.router.navigate(['/donations/donationMgt', donationTypes._id]);
   }
   delete(id){
-    this._donationManagmentService.delete(id).subscribe(
+    this._donationsService.delete(id).subscribe(
       Response => console.log("successs!", Response)
     );
-    this.router.navigate(['./deletedonationType']);
-    location.reload();
+  location.reload();
   }
-  
 }

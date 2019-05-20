@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Donations } from '../Donations';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { DonationManagmentService } from '../donation-managment.service';
 import { ShoppingCart } from '../ShoppingCart';
 import { ShoppingCartService } from '../shopping-cart.service';
 
@@ -23,13 +21,10 @@ constructor( private route:ActivatedRoute, private router:Router, private _shopp
     .subscribe( data => this.shoppingcartOrders = data);
   }  
   
-
-
 delete(id){
   this._shoppingCartService.delete(id).subscribe(
     Response => console.log("successs!", Response)
   );
-  this.router.navigate(['./deletedonationType']);
   location.reload();
 }
 

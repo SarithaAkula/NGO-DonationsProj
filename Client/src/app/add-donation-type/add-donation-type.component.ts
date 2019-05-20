@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DonationsService } from '../donations.service';
-import {Donations } from '../Donations'
+
 
 @Component({
   selector: 'app-add-donation-type',
