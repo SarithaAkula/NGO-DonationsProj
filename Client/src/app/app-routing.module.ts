@@ -16,9 +16,9 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'signup',component:SignupComponent},
   {path:'signin',component:SigninComponent},
-  {path:'home/:userid',component: DonationsComponent
+  {path:'home/UserView',component: DonationsComponent
   },
-  {path:'home/:userid/gift/:giftid',component:GiftComponent},
+  {path:'gift/:giftid',component:GiftComponent},
   {path:'user',component:UserComponent},
   { 
     path:'user/:userid', 

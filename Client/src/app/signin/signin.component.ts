@@ -31,7 +31,7 @@ export class SigninComponent{
         if(Response.user.role == 'Admin'){
           this.router.navigate(['./user']);
         }else{
-          this.router.navigate(['/home', this.id]);
+          this.router.navigate(['/home/UserView']);
         }
       }
     );

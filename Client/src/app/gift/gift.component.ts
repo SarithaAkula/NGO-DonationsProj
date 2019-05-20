@@ -14,10 +14,10 @@ import {Location} from '@angular/common';
 export class GiftComponent  {
   public donationId: string;
   public donations : Donations;
-  public userid: string;
   cart = [];
   public storedcart = JSON.parse(localStorage.getItem("items"));
-  public shoppingCartModel = new ShoppingCart("","",null, "","",null,true,"");
+  public user = JSON.parse(localStorage.getItem("user"));
+  public shoppingCartModel = new ShoppingCart(this.user.firstName,this.user.lastName,null,this.user.email,"",null,null,null);
   public submitted:boolean;
 
   constructor( private route:ActivatedRoute, private router:Router, 
@@ -28,16 +28,6 @@ export class GiftComponent  {
     this.route.paramMap.subscribe((params: ParamMap) => {
         let did = params.get('giftid');
         this.donationId = did;
-    });
-
-    this.route.parent.params.subscribe(params => {
-      this.userid = params["userid"];
-    });
-
-    this._userService.getDetail(this.userid).subscribe(data =>{
-      this.shoppingCartModel.firstName = data.firstName;
-      this.shoppingCartModel.lastName = data.lastName;
-      this.shoppingCartModel.email = data.email;
     });
 
 
