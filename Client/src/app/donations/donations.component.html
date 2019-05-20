@@ -4,9 +4,9 @@
     </div>
     <div class = "column middle">
       <h2>Click any donation to continue</h2>
-    <nav>
+    <nav  *ngFor="let donationType of donationTypes">
       <a routerLink="/gift" routerLinkActive="active" 
-      *ngFor="let donationType of donationTypes" (click)="onSelect(donationType)">{{donationType.donationType}}</a>
+      (click)="onSelect(donationType)">{{donationType.donationType}}</a>
     </nav>
     </div>
     <!-- <div routerLink="/gift" routerLinkActive="active" 

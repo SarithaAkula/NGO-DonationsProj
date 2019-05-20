@@ -34,15 +34,15 @@ export class GiftComponent  {
     });
 
     this._userService.getDetail(this.userid).subscribe(data =>{
-      this.shoppingCartModel.username = data.firstName + " " + data.LastName;
+      this.shoppingCartModel.username = data.firstName + " " + data.lastName;
       this.shoppingCartModel.email = data.email;
-    })
+    });
 
 
     this._donationsService.getDetail(this.donationId)
     .subscribe( data => {
       let donation = data;
-      this.shoppingCartModel.donnationType = data.donationType;
+      this.shoppingCartModel.donnationType = donation.donationType;
     });
 
     

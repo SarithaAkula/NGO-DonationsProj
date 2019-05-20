@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
 
     this.registrationForm = this.fb.group({
       firstName: ['', [Validators.required]],
-      LastName: [''],
+      lastName: ['', [Validators.required]],
       password: [''],
       confirmPassword: [''],
       email: [''],
@@ -64,8 +64,8 @@ export class SignupComponent implements OnInit {
     return this.registrationForm.get('firstName');
   }
 
-  get LastName() {
-    return this.registrationForm.get('LastName');
+  get lastName() {
+    return this.registrationForm.get('lastName');
   }
 
   get email() {
