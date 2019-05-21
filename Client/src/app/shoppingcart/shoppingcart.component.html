@@ -4,11 +4,13 @@
         <th>item name</th>
         <th>price</th>
         <th>monthly donation</th>
+        <th></th>
     </thead>
     <tbody>
         <td>{{c.donationType}}</td>
         <td>{{c.price}}</td>
         <td>{{c.monthly}}</td>
+        <td (click)="delete(c)">Delete</td>
     </tbody>
 </table>
 
