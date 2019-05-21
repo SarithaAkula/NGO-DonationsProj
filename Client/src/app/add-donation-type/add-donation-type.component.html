@@ -1,21 +1,30 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h5>DonationType Name</h5>
+    </div>
+    <div class="container-fluid">
+      <form [formGroup]="addTypeForm" (ngSubmit)="onSubmit()">
 
-  <div class="container-fluid">
-    <h2> Adding DonationType</h2>
-   <form [formGroup]="addTypeForm" (ngSubmit)="onSubmit()"> 
-     
-      <div class="form-group">
-        <label>DonationType Name</label>
-        
-        <input type="text" formControlName="donationType" class="form-control" >
-           
+        <div class="form-group">
+
+          <input type="text" formControlName="donationType" class="form-control">
+
           <small class="text-danger" *ngIf="donationType.errors?.required">DonationType is required</small>
-          <small class="text-danger" *ngIf="donationType.errors?.minlength">DonationType must be at least 1 characters</small>
-        
-      </div>
-      <button class="btn btn-primary"  type="button" (click)="gotoDonation()">Cancel</button>
-  
-      <button class="btn btn-primary" type="submit">Submit</button>
-  
-    </form>
+          <small class="text-danger" *ngIf="donationType.errors?.minlength">DonationType must be at least 1
+            characters</small>
+
+        </div>
+        <button class="btn btn-primary" type="button" (click)="gotoDonation()">Cancel</button>
+
+        <button class="btn btn-primary" type="submit">Add</button>
+
+      </form>
+    </div>
   </div>
+</div>

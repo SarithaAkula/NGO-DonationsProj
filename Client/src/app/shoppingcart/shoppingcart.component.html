@@ -1,50 +1,57 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-<div class="container">
-
-
-        <div class="shopping-cart float-left">
-         
-         <div class="title">
-           Shopping Cart
-         </div>
-        
-         
-         <div class="item" *ngFor="let c of items">
-           <div class="buttons">
-             <button class="delete-btn" type="button" name="button" (click)="delete(c)">X</button>
-           </div>
-        
-           <div class="image">
-               <img src="../../assets/Screenshot (133).png">
-           </div>
-        
-           <div class="description">
-             <span>Type Name:</span>
-             <span>{{c.donationType}}</span> 
-           </div>
-        
-        
-           <div class="total-price">${{c.price}}</div>  
-           <!-- <div class="total-price">{{c.monthly}}</div> -->
-           <div class="description">
-                <span>Donate Monthly:</span>
-                <span>{{c.monthly}}</span> 
-              </div>
-         </div>
-       
-       
-         <div class="item"> 
-             <div class="total-price">TOTAL:</div>
-             <div class="total-price">${{total}}</div>
-         </div>
-       
-         <div class="item">
-                   <!-- <a routerLink="" routerLinkActive="active" class="p-2 text-muted" >EMPTY CART</a> -->
-                   <a routerLink="/home/UserView" routerLinkActive="active" class="p-2 text-muted" >CONTINUE SHOPPING</a>
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h2>Shopping Cart</h2>
         </div>
-           
-        <button class="CheckOut button"  (click)="onSubmit()" role="button" >CheckOut >>></button>
-        
-       
-       </div>
+        <div class="container">
+
+
+            <div class="shopping-cart float-left">
+
+                <div class="item" *ngFor="let c of items">
+                    <div class="buttons">
+                        <button class="delete-btn" type="button" name="button" (click)="delete(c)">X</button>
+                    </div>
+
+                    <div class="image">
+                        <img src="../../assets/Screenshot (133).png">
+                    </div>
+
+                    <div class="description">
+                        <span>Type Name:</span>
+                        <span>{{c.donationType}}</span>
+                    </div>
+
+
+                    <div class="total-price">${{c.price}}</div>
+                    <!-- <div class="total-price">{{c.monthly}}</div> -->
+                    <div class="description">
+                        <span>Donate Monthly:</span>
+                        <span>{{c.monthly}}</span>
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <div class="total-price">TOTAL:</div>
+                    <div class="total-price">${{total}}</div>
+                </div>
+
+                <div class="item">
+                    <!-- <a routerLink="" routerLinkActive="active" class="p-2 text-muted" >EMPTY CART</a> -->
+                    <a routerLink="/home/UserView" routerLinkActive="active" class="p-2 text-muted">CONTINUE
+                        SHOPPING</a>
+                </div>
+
+                <button class="CheckOut button" (click)="onSubmit()" role="button">CheckOut >>></button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
