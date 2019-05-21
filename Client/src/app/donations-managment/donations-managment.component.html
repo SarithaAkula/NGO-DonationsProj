@@ -1,17 +1,13 @@
-
-<button (click) = "allDonationTypes()">
-    All Donation Types
-</button>
-  <table class="table table-bordered">
-  
+<h3 class="mb-3">Donation Management</h3>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
     <thead>
-        <tr>
-            <th>User Name</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>DonationType</th>
-          
-        </tr>  
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+      <th>Amount</th>
+      <th>DonationType</th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let u of shoppingcartOrders; let i = index"  >
@@ -19,8 +15,14 @@
         <td>{{u.date | date}}</td>
         <td>{{u.price}}</td>
         <td>{{u.donationType}}</td>
-        <td (click) = "delete(u._id)">Delete</td>
+        
+        <button type="button" class="btn btn-sm btn-danger" (click) = "delete(u._id)">Delete</button>
       </tr>
-      
+    
     </tbody>
   </table>
+  <button type="button" class="btn  btn-primary" (click) = "allDonationTypes()">
+      AllDonationTypes>>
+  </button>
+ 
+</div>

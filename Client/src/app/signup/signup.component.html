@@ -1,15 +1,37 @@
-<div class="container-fluid">
-  <h2>Registration Form</h2>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>first Name</label>
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+      <h2>Registration Form</h2>
+    </div>
+    <div class="col-md-9 register-right">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">User</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+           <!-- <h3 class="register-heading">Registration Form</h3> -->
+      <div class="row register-form">
+      <div class="col-md-6">
+                <!-- <div class="form-group">
+                  <input type="text" class="form-control" placeholder="First Name *" value="" /> -->
+                                
+      <div class="form-group">
+      <label>First Name</label>
       <input type="text" formControlName="firstName" class="form-control">
-      <!-- <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">firstName is required</small> -->
         <small class="text-danger" *ngIf="firstName.errors?.required">firstName is required</small>
         <small class="text-danger" *ngIf="firstName.errors?.minlength">firstName must be at least 3 characters</small>
-
-    </div>
+      </div>
 
     <div class="form-group">
       <label>Last Name</label>
@@ -18,8 +40,6 @@
         <small class="text-danger" *ngIf="lastName.errors?.required">lastName is required</small>
         <small class="text-danger" *ngIf="lastName.errors?.minlength">lastName must be at least 3 characters</small>
     </div>
-
-
     <div class="form-group">
       <label>Email</label>
       <input type="text" formControlName="email" class="form-control">
@@ -76,6 +96,11 @@
       </div>
 
     <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Register</button>
-
+  </div>
+  </div>
+  </div>
+  </div>
   </form>
+  </div>
+</div>
 </div>

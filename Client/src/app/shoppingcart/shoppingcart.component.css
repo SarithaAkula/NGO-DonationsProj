@@ -1,4 +1,5 @@
 
+
       * {
         box-sizing: border-box;
       }
@@ -12,7 +13,7 @@
         font-family: 'Roboto', sans-serif;
       }
       .shopping-cart {
-        width: 850px;
+        width: 950px;
         height: 623px;
         margin: 80px auto;
         background: rgb(248, 245, 245);
@@ -27,7 +28,7 @@
         border-bottom: 1px solid #E1E8EE;
         padding: 20px 30px;
         color: rgb(16, 18, 22);
-        font-size: 23px;
+        font-size: 26px;
         font-weight: 400;
       }
        
@@ -46,8 +47,7 @@
         padding-top: 30px;
         margin-right: 60px;
       }
-      .delete-btn,
-      .like-btn {
+      .delete-btn {
         display: inline-block;
         Cursor: pointer;
       }
@@ -65,16 +65,6 @@
         margin-right: 60px;
         bottom: 10px;
       } 
-      .like-btn {
-        position: absolute;
-        top: 9px;
-        left: 15px;
-        
-        width: 60px;
-        height: 60px;
-        background-size: 2900%;
-        background-repeat: no-repeat;
-      }
       .is-active {
         animation-name: animate;
         animation-duration: .8s;
@@ -102,18 +92,18 @@
        
       .description span {
         display: block;
-        font-size: 14px;
-        color: #43484D;
-        font-weight: 400;
+        font-size: 15px;
+        color: rgb(111, 113, 114);
+        font-weight: 600;
       }
        
       .description span:first-child {
         margin-bottom: 5px;
       }
       .description span:last-child {
-        font-weight: 300;
-        margin-top: 8px;
-        color: #86939E;
+        font-weight: 500;
+        margin-top: 10px;
+        color: rgb(11, 13, 15);
       }
       .quantity {
         padding-top: 20px;
@@ -152,9 +142,9 @@
         width: 83px;
         padding-top: 27px;
         text-align: center;
-        font-size: 16px;
-        color: #43484D;
-        font-weight: 300;
+        font-size: 18px;
+        color: rgb(13, 15, 17);
+        font-weight: 400;
       }
       @media (max-width: 800px) {
         .shopping-cart {

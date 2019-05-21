@@ -1,20 +1,50 @@
-<div *ngFor="let c of items">
-<table>
-    <thead>
-        <th>item name</th>
-        <th>price</th>
-        <th>monthly donation</th>
-        <th></th>
-    </thead>
-    <tbody>
-        <td>{{c.donationType}}</td>
-        <td>{{c.price}}</td>
-        <td>{{c.monthly}}</td>
-        <td (click)="delete(c)">Delete</td>
-    </tbody>
-</table>
 
-</div>
 
-<p>total: {{total}}</p>
-<button (click)="onSubmit()">submit order</button>
+<div class="container">
+
+
+        <div class="shopping-cart float-left">
+         
+         <div class="title">
+           Shopping Cart
+         </div>
+        
+         
+         <div class="item" *ngFor="let c of items">
+           <div class="buttons">
+             <button class="delete-btn" type="button" name="button" (click)="delete(c)">X</button>
+           </div>
+        
+           <div class="image">
+               <img src="../../assets/Screenshot (133).png">
+           </div>
+        
+           <div class="description">
+             <span>Type Name:</span>
+             <span>{{c.donationType}}</span> 
+           </div>
+        
+        
+           <div class="total-price">${{c.price}}</div>  
+           <!-- <div class="total-price">{{c.monthly}}</div> -->
+           <div class="description">
+                <span>Donate Monthly:</span>
+                <span>{{c.monthly}}</span> 
+              </div>
+         </div>
+       
+       
+         <div class="item"> 
+             <div class="total-price">TOTAL:</div>
+             <div class="total-price">${{total}}</div>
+         </div>
+       
+         <div class="item">
+                   <!-- <a routerLink="" routerLinkActive="active" class="p-2 text-muted" >EMPTY CART</a> -->
+                   <a routerLink="/home/UserView" routerLinkActive="active" class="p-2 text-muted" >CONTINUE SHOPPING</a>
+        </div>
+           
+        <button class="CheckOut button"  (click)="onSubmit()" role="button" >CheckOut >>></button>
+        
+       
+       </div>

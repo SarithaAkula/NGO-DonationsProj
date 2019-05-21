@@ -6,25 +6,28 @@
 
     <ng-template #Admin>
         <div class="topnav">
-            <a routerLink="/home" routerLinkActive="inactivate">NGO</a>
             <ul>
+                    <li style="float:right" (click)="logout()"><a routerLinkActive="active">logout</a></li>
+                    <li style="float:right"><a routerLinkActive="active">{{user.email}}</a></li>
                 <li style="float:right"><a routerLink="/user" routerLinkActive="active">User Management</a></li>
                 <li style="float:right"><a routerLink="/donations" routerLinkActive="active">Donation Management</a>
                 </li>
                 <li style="float:right"><a routerLink="/home/UserView" routerLinkActive="active">Donation(User view)</a>
                 </li>
-                <li style="float:right" (click)="logout()"><a routerLinkActive="active">logout</a></li>
+                
             </ul>
-            <li style="float:right"><a routerLinkActive="active">{{user.email}}</a></li>
+            
 
         </div>
     </ng-template>
     <ng-template #User>
         <div class="topnav">
+                <li style="float:right" (click)="logout()"><a routerLinkActive="active">logout</a></li>
+                <li style="float:right"><a routerLinkActive="active">{{user.email}}</a></li>
             <li style="float:right"><a routerLink="/home/UserView" routerLinkActive="active">Donation(User view)</a>
             </li>
-            <li style="float:right" (click)="logout()"><a routerLinkActive="active">logout</a></li>
-            <li style="float:right"><a routerLinkActive="active">{{user.email}}</a></li>
+            
+            
         </div>
     </ng-template>
 </div>

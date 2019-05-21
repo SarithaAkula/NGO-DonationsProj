@@ -4,9 +4,10 @@
 
 /* Style the header */
 .header {
-  background-color: #32dde9;
+  background-color:#3931af;
   padding: 20px;
   text-align: center;
+  color: whitesmoke;
 }
 
 /* Style the top navigation bar */
@@ -73,7 +74,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .hero-image {
-  background: url('../../assets/images/donate3.jpg') no-repeat center; 
+  background: url(https://pmh.com/wp-content/uploads/donate.jpg) no-repeat center; 
   background-size: cover;
   height: 500px;
   position: relative;
