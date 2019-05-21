@@ -10,7 +10,7 @@ import { DonationsService } from '../donations.service'
   templateUrl: './donations-managment.component.html',
   styleUrls: ['./donations-managment.component.css']
 })
-export class DonationsManagmentComponent {
+export class DonationsManagmentComponent implements OnInit{
 public errorMsg : string;
 public shoppingcartId: string;
 public donationTypes = [];
@@ -23,6 +23,13 @@ constructor( private route:ActivatedRoute, private router:Router, private _shopp
   this._shoppingcartService.getData()
     .subscribe( data => this.shoppingcartOrders = data);
   }  
+
+  ngOnInit(){
+    while(JSON.parse(localStorage.getItem("changed"))){
+      location.reload();
+      localStorage.setItem("changed", "false");
+    }
+  }
   
 onSelect(shoppingcartOrder){
   this.router.navigate(['/donations', shoppingcartOrder._id]);

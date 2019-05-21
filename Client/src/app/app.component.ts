@@ -22,6 +22,7 @@ export class AppComponent{
   logout(){
     this.router.navigate(['./home'])
     localStorage.clear();
+    localStorage.setItem("changed", 'true');
   }
   
 }

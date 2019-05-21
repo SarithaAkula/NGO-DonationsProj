@@ -32,6 +32,7 @@ export class UpdateDonationTypeComponent{
     .subscribe(
       Response => console.log("successs!", Response)
     );
+    localStorage.setItem("changed", 'true');
     this.router.navigate(['./donationsManagmentDetails']);
     
   }

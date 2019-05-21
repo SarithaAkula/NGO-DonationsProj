@@ -10,6 +10,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    while(JSON.parse(localStorage.getItem("changed"))){
+      location.reload();
+      localStorage.setItem("changed", "false");
+    }
   }
 
 }

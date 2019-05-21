@@ -18,6 +18,10 @@ export class DonationsManagmentDetailsComponent implements OnInit {
     }
   
   ngOnInit() {
+    while(JSON.parse(localStorage.getItem("changed"))){
+      location.reload();
+      localStorage.setItem("changed", "false");
+    }
     this._donationsService.getData()
     .subscribe( data => this.donationTypes = data);
   }
