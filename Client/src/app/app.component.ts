@@ -24,5 +24,8 @@ export class AppComponent{
     localStorage.clear();
     localStorage.setItem("changed", 'true');
   }
-  
+ userDetail(){
+   this.router.navigate(["./user",this.user._id]);
+ }
+
 }
