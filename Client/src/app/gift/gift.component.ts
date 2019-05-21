@@ -51,7 +51,8 @@ export class GiftComponent  {
     this._location.back();
   }
   addtoCart(){
-    var x = document.getElementById("myCheck").checked;
+    let input = document.getElementById("myCheck") as HTMLInputElement;
+    var x = input.checked;
     //console.log(x);
     this.shoppingCartModel.monthly = x;
     let sp = this.shoppingCartModel;
