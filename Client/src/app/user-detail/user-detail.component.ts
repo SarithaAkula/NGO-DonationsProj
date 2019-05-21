@@ -21,6 +21,7 @@ export class UserDetailComponent {
   updated = false;
   //@Input() user: user;
   roles = Array<String>();
+  public userx =  JSON.parse(localStorage.getItem("user"));
 
   constructor( private route:ActivatedRoute, private router:Router, private _userService: UserService) { 
     this.roles.push("Admin");
@@ -46,7 +47,12 @@ export class UserDetailComponent {
       Response => console.log("successs!", Response)
     );
     localStorage.setItem("changed", "true");
-    this.router.navigate(['./user']);
+    if(this.userx.role=="Admin"){
+      this.router.navigate(['./user']);
+    }else{
+      this.router.navigate(['./home/UserView']);
+    }
+    
 
     //location.reload();
   }

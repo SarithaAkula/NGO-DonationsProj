@@ -38,8 +38,8 @@
       <td>{{u.lastName}}</td>
       <td>{{u.email}}</td>
       <td>{{u.role}}</td>
-      <td  (click) = "onSelect(u)">Edit</td>
-      <td class="btn btn-sm btn-danger"  (click) = "delete(u._id)">Delete</td>
+      <td><button class="btn btn-primary"  (click) = "onSelect(u)">Edit</button></td>
+      <td><button  class="btn btn-danger"  (click) = "delete(u._id)">Delete</button></td>
     </tr>
   </tbody>
  </table>
