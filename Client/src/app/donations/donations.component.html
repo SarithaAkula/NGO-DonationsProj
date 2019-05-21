@@ -5,10 +5,11 @@
     <div class = "column middle">
       <h2>Click any donation to continue</h2>
       <div *ngFor="let donationType of donationTypes">
-       
+       <nav>
             <p (click)="onSelect(donationType)">
                 {{donationType.donationType}}
             </p> 
+          </nav>
       </div>
 
       <button type="button" (click)="gotoCart()">go to cart</button>
@@ -19,3 +20,13 @@
   </body>
     
 
+  <!-- <div class = "column middle">
+      <h2>Click any donation to continue</h2>
+    <nav>
+      <a routerLink="/gift" routerLinkActive="active" 
+      *ngFor="let donationType of donationTypes" (click)="onSelect(donationType)">{{donationType.donationType}}</a>
+    </nav>
+    </div> -->
+    
+    <!-- </body> -->
+    
