@@ -1,14 +1,40 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr><th>Donation Type</th></tr>  
-    </thead>
-    <tbody>
-      <tr *ngFor="let u of donationTypes; let i = index"  >
-        <td>{{u.donationType}}</td>
-        <td><button (click) = "onSelect(u)">Edit</button> </td>
-         <td><button (click) = "delete(u._id)">Delete</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <button (click) = "addDonationType()">Add </button> 
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h2>Donation Type Management</h2>
+    </div>
+    <div class="col-md-9 register-right">
+      <button class="btn btn-primary" (click)="addDonationType()">
+        add new type
+      </button>
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row register-form">
+            <div class="col-md-6">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Donation Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let u of donationTypes; let i = index">
+                    <td>{{u.donationType}}</td>
+                    <td><button (click)="onSelect(u)">Edit</button> </td>
+                    <td><button (click)="delete(u._id)">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

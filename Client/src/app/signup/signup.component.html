@@ -5,102 +5,97 @@
 <div class="container register">
   <div class="row">
     <div class="col-md-3 register-left">
-      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
       <h2>Registration Form</h2>
     </div>
     <div class="col-md-9 register-right">
-    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-      <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Admin</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">User</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-           <!-- <h3 class="register-heading">Registration Form</h3> -->
-      <div class="row register-form">
-      <div class="col-md-6">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!-- <h3 class="register-heading">Registration Form</h3> -->
+            <div class="row register-form">
+              <div class="col-md-6">
                 <!-- <div class="form-group">
                   <input type="text" class="form-control" placeholder="First Name *" value="" /> -->
-                                
-      <div class="form-group">
-      <label>First Name</label>
-      <input type="text" formControlName="firstName" class="form-control">
-        <small class="text-danger" *ngIf="firstName.errors?.required">firstName is required</small>
-        <small class="text-danger" *ngIf="firstName.errors?.minlength">firstName must be at least 3 characters</small>
-      </div>
 
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" formControlName="lastName" class="form-control">
-      <!-- <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">lastName is required</small> -->
-        <small class="text-danger" *ngIf="lastName.errors?.required">lastName is required</small>
-        <small class="text-danger" *ngIf="lastName.errors?.minlength">lastName must be at least 3 characters</small>
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" formControlName="firstName" class="form-control">
+                  <small class="text-danger" *ngIf="firstName.errors?.required">firstName is required</small>
+                  <small class="text-danger" *ngIf="firstName.errors?.minlength">firstName must be at least 3
+                    characters</small>
+                </div>
+
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" formControlName="lastName" class="form-control">
+                  <!-- <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">lastName is required</small> -->
+                  <small class="text-danger" *ngIf="lastName.errors?.required">lastName is required</small>
+                  <small class="text-danger" *ngIf="lastName.errors?.minlength">lastName must be at least 3
+                    characters</small>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" formControlName="email" class="form-control">
+                  <small class="text-danger">Email is required</small>
+                </div>
+
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" formControlName="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                  <input type="password" [class.is-invalid]="registrationForm.errors?.misMatch"
+                    formControlName="confirmPassword" class="form-control">
+                  <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
+                </div>
+
+                <div class="form-group">
+                  <label>Address 1</label>
+                  <input type="text" formControlName="address1" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Address 2</label>
+                  <input type="text" formControlName="address2" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" formControlName="city" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label>State</label>
+                  <input type="text" formControlName="state" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="text" formControlName="postalCode" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>country</label>
+                  <input type="text" formControlName="country" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Urbanization</label>
+                  <input type="text" formControlName="urbanization" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Role</label>
+
+                  <select formControlName="role" class="form-control">
+                    <option *ngFor="let x of roles" [value]="x">{{x}}</option>
+                  </select>
+                </div>
+
+                <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="text" formControlName="email" class="form-control">
-      <small class="text-danger">Email is required</small>
-    </div>
-
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" formControlName="password" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Confirm Password</label>
-      <input type="password" [class.is-invalid]="registrationForm.errors?.misMatch" formControlName="confirmPassword" class="form-control">
-      <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
-    </div>
-
-    <div class="form-group">
-      <label>Address 1</label>
-      <input type="text" formControlName="address1" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Address 2</label>
-      <input type="text" formControlName="address2" class="form-control">
-    </div>
-      <div class="form-group">
-        <label>City</label>
-        <input type="text" formControlName="city" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label>State</label>
-        <input type="text" formControlName="state" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label>Postal Code</label>
-        <input type="text" formControlName="postalCode" class="form-control">
-      </div>
-      <div class="form-group">
-        <label>country</label>
-        <input type="text" formControlName="country" class="form-control">
-      </div>
-      <div class="form-group">
-        <label>Urbanization</label>
-        <input type="text" formControlName="urbanization" class="form-control">
-      </div>
-      <div class="form-group">
-        <label>Role</label>
-        
-        <select formControlName="role" class="form-control">
-            <option *ngFor="let x of roles" [value]="x">{{x}}</option>
-        </select>
-      </div>
-
-    <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Register</button>
   </div>
-  </div>
-  </div>
-  </div>
-  </form>
-  </div>
-</div>
 </div>
