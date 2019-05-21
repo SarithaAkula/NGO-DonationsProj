@@ -45,7 +45,9 @@ export class UserDetailComponent {
     .subscribe(
       Response => console.log("successs!", Response)
     );
+    localStorage.setItem("changed", "true");
     this.router.navigate(['./user']);
+
     //location.reload();
   }
 

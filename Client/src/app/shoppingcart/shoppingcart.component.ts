@@ -19,15 +19,22 @@ export class ShoppingcartComponent implements OnInit {
   constructor(private _shoppingcartservice: ShoppingcartService,
     private router: Router
     ) { 
+     
     
   }
 
   ngOnInit() {
+    
     this.items.forEach(element => {
       this.total =  this.total+element.price;
     });
   }
 
+  delete(shoppingcart:ShoppingCart){
+    this.items = this.items.filter(item => item !== shoppingcart);
+    localStorage.setItem("items",JSON.stringify(this.items));
+    location.reload();
+  }
   onSubmit(){
     this.items.forEach(element => {
       this._shoppingcartservice.addOrder(element)
