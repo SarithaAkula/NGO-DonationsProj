@@ -30,6 +30,8 @@ export class SigninComponent{
         this.id = id;
         localStorage.setItem("user", JSON.stringify(Response.user));
         localStorage.setItem("login", "true");
+        localStorage.setItem("changed", "true");
+
         console.log(Response.user.role)
         if(Response.user.role == 'Admin'){
           localStorage.setItem("admin", "true");

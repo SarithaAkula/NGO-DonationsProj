@@ -26,6 +26,7 @@ export class SignupComponent implements OnInit {
 
   roles = Array<String>();
 
+  public login=JSON.parse(localStorage.getItem("login"));
   constructor(private fb: FormBuilder, private _signupService: SignupService,private router:Router) { }
 
   ngOnInit() {
@@ -85,10 +86,12 @@ export class SignupComponent implements OnInit {
     this._signupService.signup(this.registrationForm.value)
       .subscribe(
         response => {
-          /*if(response.role == 'Admin'){
+          console.log(this.login)
+          if(this.login == true){
             this.router.navigate(['./user']);
-          }*/
+          }else{
           this.router.navigate(['./signin']);
+          }
         },
         //console.log('Success!', response),
         error => console.error('Error!', error)

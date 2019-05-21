@@ -13,6 +13,7 @@ export class AppComponent{
   public login = JSON.parse(localStorage.getItem("login"));
   public admin = JSON.parse(localStorage.getItem("admin"));
  
+  public user =  JSON.parse(localStorage.getItem("user"));
   constructor(private router:Router){
     
   }
@@ -21,6 +22,7 @@ export class AppComponent{
   logout(){
     this.router.navigate(['./home'])
     localStorage.clear();
+    localStorage.setItem("changed", 'true');
   }
   
 }
