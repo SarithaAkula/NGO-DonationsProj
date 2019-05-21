@@ -1,25 +1,33 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h2>Donation </h2>
+    </div>
+    <div class="p-3 mb-2 bg-white text-black">
 
+      <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        {{donations.donationType}}
+        <div class="form-group">
+          <label>Amount $</label>
+          <input type="number" #price="ngModel" required class="form-control"
+            [class.is-invalid]="price.invalid && price.touched" name="price" [(ngModel)]="shoppingCartModel.price">
+          <small class="text-danger" [class.d-none]="price.valid || price.untouched"> price is required </small>
+        </div>
+        <p>
+          <label> donate monthly</label>
+          <input type="checkbox" id="myCheck" name="monthly">
+        </p>
 
+        <button class="btn btn-primary" type="button" (click)="goBackDonation()">Back</button>
+        <button class="btn btn-primary" type="button" (click)="addtoCart()">Add to cart</button>
+      </form>
 
-<div class="p-3 mb-2 bg-dark text-white">
-
-<form #myForm="ngForm" (ngSubmit)="onSubmit()">
-    {{donations.donationType}}
-    <div class="form-group">
-        <label>Amount $</label>
-        <input type="number" #price="ngModel" required class="form-control" 
-        [class.is-invalid]="price.invalid && price.touched" name="price" [(ngModel)]="shoppingCartModel.price">
-        <small class="text-danger" [class.d-none]="price.valid || price.untouched"> price is required </small>  
-      </div>
-    <p>
-      <label> donate monthly</label>
-        <input type="checkbox" id="myCheck" name="monthly">
-    </p>
-
-      <button type="button" (click)="goBackDonation()">Back</button>
-    <button type="button" (click)="addtoCart()">Add to cart</button>
-</form>
-
-<button type="button" (click)="gotoCart()">go to cart</button>
+      <button class="btn btn-primary" type="button" (click)="gotoCart()">go to cart</button>
+    </div>
+  </div>
 </div>

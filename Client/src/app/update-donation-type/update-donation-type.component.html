@@ -1,13 +1,23 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <div class = "container-fluid" *ngIf="!submitted">
-    <h2>DonationType Information</h2>
-    <form [formGroup]="updateForm"  (ngSubmit)="onSubmit()" novalidate>
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h5>DonationType Name</h5>
+    </div>
+    <div class="container-fluid" *ngIf="!submitted">
+      <form #donationTypeForm="ngForm" (ngSubmit)="updateDetails(donationTypeForm)" novalidate>
         <div class="form-group">
-            <label>DonationType</label>
-            <input type="text" formControlName="donationType" required class="form-control" 
+
+          <input type="text" #donationType="ngModel" required class="form-control"
             [class.is-invalid]="donationType.invalid" name="donationType" [(ngModel)]="donations.donationType">
-            <small class="text-danger" [class.d-none]="donationType.valid"> donationType is required </small>  
+          <small class="text-danger" [class.d-none]="donationType.valid"> donationType is required </small>
         </div>
-      <button class="btn btn-primary" type="submit" >save</button>
-    </form>
+        <button class="btn btn-primary" type="submit">save</button>
+      </form>
+    </div>
   </div>
+</div>
