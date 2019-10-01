@@ -10,7 +10,7 @@ const cors = require('cors')
 router.use(bodyparser.urlencoded({extended: true}));
 router.use(bodyparser.json());
 
-router.use(cors({origin:"http://localhost:4200"},'*','*'));
+router.use(cors({origin:"http://localhost:4200"},'*','*')); //4200
 //post
 /*router.post('/api/users', function(req, res, next){
     Game.create(req.body, function(err, game){

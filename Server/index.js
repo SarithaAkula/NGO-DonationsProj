@@ -5,7 +5,7 @@ const users = require('./Routes/user');
 const donations = require('./Routes/donations');
 const shoppingcart = require('./Routes/donationmanagement');
 
-app.use('/',shoppingcart);
+app.use('/',shoppingcart); //load the router on '/‘
 app.use('/',donations);
 
 app.use('/',users);
